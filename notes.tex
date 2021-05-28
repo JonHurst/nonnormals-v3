@@ -367,6 +367,7 @@ a \strong{caution.}
 \multicite{FCTM PR.NP.SP.10.10}
 
 \section{Unreliable airspeed \emph{(memory item)}}
+\label{sec-unreliable-airspeed}
 
 Unreliable airspeed indications may result from radome damage and/or
 unserviceable probes or ports. Altitude indications may also be erroneous if
@@ -643,8 +644,9 @@ to directly prove an unstalled condition from attitude and airspeed data. The
 flight recorders from the December 2014 Air Asia accident recorded an angle of
 attack of 40 degrees (i.e. around 25 degrees greater than critical angle) with
 both pitch and roll zero and speeds up to 160kt. Importantly, it is perfectly
-possible to be fully stalled in the emergency configurations described in <xref
-linkend="unreliable-airspeed"/>. Identification of a fully stalled condition is
+possible to be fully stalled in the short term unreliable airspeed
+configurations described in Section
+\ref{sec-unreliable-airspeed}. Identification of a fully stalled condition is
 thus largely dependent on identifying a high and uncontrollable descent rate
 that does not correlate with normal flight path expectations for the attitude
 and thrust applied.
@@ -659,6 +661,12 @@ vector may be 40\textdegree{ }or more below the centerline of the
 aircraft. Thus the amount of pitch down required to recover a fully stalled
 aircraft can be 30\textdegree{ }or more.
 
+In two recent Airbus accidents involving stalls, the lack of physical cross
+coupling of sidesticks was a major factor. If one pilot elects to hold full back
+sidestick, the aircraft cannot be recovered by the other pilot unless the
+takeover button is used. With all the alarms, it would be easy to miss ``Dual
+Input'' warnings, so \emph{always} press the takeover button.
+
 The aircraft's thrust vector helps to accelerate the aircraft during the
 recovery, and increasing speed along the aircraft's centerline acts to reduce
 the stalled angle of attack. Thus, while thrust is not a primary means of
@@ -666,21 +674,16 @@ recovery, it does help. Unfortunately, Airbus have determined that due to the
 pitch couple associated with underslung engines, there may be insufficient
 longitudinal control authority to pitch the aircraft sufficiently to recover
 from a stall if \ac{TOGA} is selected. It may therefore be necessary to
-initially reduce thrust to allow the primary recovery technique to be applied;
-this is extremely counterintuitive.
-
-In the two recent Airbus accidents involving stalls, the lack of physical cross
-coupling of sidesticks was a major factor. If one pilot elects to hold full back
-sidestick, the aircraft cannot be recovered by the other pilot unless the
-takeover pushbutton is used. With all the alarms, it is easy to miss ``Dual
-Input''.
+initially \emph{reduce} thrust to allow the primary recovery technique to be
+applied; this is extremely counterintuitive.
 
 Once there are no longer any indications of the stall, smoothly recover from the
 dive, adjust thrust, check speedbrakes retracted and if appropriate (clean and
-below 20,000ft) deploy the slats by selecting flaps 1. The load factor
+below 20,000ft) deploy the slats by selecting \ac{CONF}~1. The load factor
 associated with an overly aggressive pull out can induce a secondary stall; on
 the flip side, once reattachment of the airflow occurs, drag rapidly diminishes
-and exceedance of high speed airframe limitations becomes a threat.
+and exceedance of high speed airframe limitations becomes a threat. A balance
+needs to be found.
 
 If a stall warner sounds on takeoff it is likely to be spurious since you are
 almost certainly in normal law. The procedure in this case is essentially to
