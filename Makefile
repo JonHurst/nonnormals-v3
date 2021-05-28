@@ -14,7 +14,7 @@ build/lastbuilt: notes.tex priv.cfg
 	" -cunihtf -utf8"
 	touch build/lastbuilt
 
-stage: pdf html
+stage: pdf/notes.pdf build/lastbuilt
 	cp pdf/notes.pdf \
 	html/*.html \
 	html/*.css \
