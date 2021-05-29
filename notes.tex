@@ -733,26 +733,27 @@ The safety factor may be disregarded in exceptional circumstances.
 
 \section{Abnormal V Alpha Prot}
 
-If two or more angle of attack vanes become blocked at the same angle during
-climb, alpha floor protection will be activated once a Mach number is reached
-where the angle of attack at which the vanes were blocked becomes indicative of
-an incipient stall condition. Since the flight computer's attempts to reduce
-angle of attack will not be registered by the blocked vanes, a continuous nose
-down pitch rate which cannot be stopped with sidestick inputs will result.
+If two or more angle of attack vanes become frozen at the same angle during
+climb, a Mach number will eventually be reached such that the erroneous angle of
+attack data indicates an incipient stall. When this happens, Normal Law high
+angle of attack protection will activate. The flight computers' attempt to
+reduce angle of attack will not, however, be registered by the frozen vanes,
+leading to a continuous nose down pitch rate which cannot be overridden with
+sidestick inputs.
 
-Indications of the incipient condition are available from the Alpha Prot and
-Alpha max strips. If the Alpha Max strip (solid red) completely hides the Alpha
-Prot strip (black and amber) or the Alpha Prot strip moves rapidly by more than
-30kt during flight manoeuvres with \ac{AP} on and speed brakes retracted, blocked
-angle of attack vanes should be suspected.
+Indications of this condition are available from the
+$\alpha$\textsubscript{prot} and $\alpha$\textsubscript{max} strips. If the
+$\alpha$\textsubscript{max} strip (solid red) completely hides the
+$\alpha$\textsubscript{prot} strip (black and amber) or the
+$\alpha$\textsubscript{prot} strip moves rapidly by more than 30kt during flight
+manoeuvres with \ac{AP} on and speed brakes retracted, frozen angle of attack
+vanes should be suspected.
 
 The solution is to force the flight computers into Alternate Law where the
 protection does not apply. This is most conveniently done by turning off any two
 \ac{ADR}s. Once in Alternate Law, the stall warning strip (red and black)
-becomes available. Since this may be receiving data from a blocked angle of
-attack vane, erroneous presentation is possible.
-
-\multicite{OEBPROC-48}
+becomes available. Since stall warning data also comes from the angle of attack
+vanes, erroneous presentation is likely.
 
 \section{Overspeed Recovery}
 
