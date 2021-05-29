@@ -838,10 +838,11 @@ An \ac{ECAM} warning of excess (>9550ft) cabin altitude should be relied upon, e
 if not backed up by other indications.
 
 The initial response should be to protect yourself by getting an oxygen mask
-on. Initiate a descent; if above \ac{FL}160, this should be an Emergency Descent
-(see Section \ref{sec-emer-descent}). Once the descent is established and all
-relevant checklists are complete, check the position of the outflow valve and,
-if it is not fully closed, use manual control to close it.
+on. Initiate a descent; if above \ac{FL}160, this should be in accordance with
+the Emergency Descent procedure (see Section \ref{sec-emer-descent}). Once the
+descent is established and all relevant checklists are complete, check the
+position of the outflow valve and, if it is not fully closed, use manual control
+to close it.
 
 \multicite{\uline{CAB PR}~EXCESS~CAB~ALT, FCOM~PRO.AEP.CAB~PR}
 
@@ -861,11 +862,13 @@ elevation must be manually selected. This is done by pulling out and turning the
 
 The \ecam{air}{PACK FAULT} \ac{ECAM} indicates that the pack flow control valve
 position disagrees with the selected position or that the pack valve has closed
-due to compressor outlet overheat or pack outlet overheat. The affected pack
-should be turned off. A possible reason for this failure is loss of both
-channels of an Air Conditioning System Controller (\ac{ACSC}). If this occurs,
-the associated hot air trimming will also be lost (cockpit for \ac{ACSC} 1,
-cabin for \ac{ACSC} 2).
+due to either compressor outlet overheat or pack outlet overheat.
+
+The affected pack should be turned off.
+
+A possible reason for this failure is loss of both channels of an Air
+Conditioning System Controller (\ac{ACSC}). If this occurs, the associated hot
+air trimming will also be lost (cockpit for \ac{ACSC} 1, cabin for \ac{ACSC} 2).
 
 If there are simultaneous faults with both packs, ram air must be used. This
 will necessitate depressurisation of the aircraft, so a descent to \ac{FL}100 (or \ac{MEA}
@@ -930,8 +933,10 @@ illuminates in the \ac{HOT} \ac{AIR} button. This light will extinguish when the
 temperature drops to 70\textdegree C.
 
 Once the duct has cooled, an attempt can be made to recover the hot air system
-by cycling the \ac{HOT} \ac{AIR} button. If recovery is not possible, basic temperature
-regulation will continue to be provided by the packs.
+by cycling the \ac{HOT} \ac{AIR} button.
+
+If recovery is not possible, basic temperature regulation will continue to be
+provided by the packs.
 
 \multicite{\uline{COND}~FWD~CAB/AFT~CAB/CKPT~DUCT~OVHT, FCOM~PRO.AEP.COND}
 
@@ -939,11 +944,15 @@ regulation will continue to be provided by the packs.
 \section{Hot air fault}
 
 If the hot air pressure regulating valve is not in its commanded position, the
-effects will depend on its actual position. If it is closed when commanded open,
-the packs will provide basic temperature regulation. More serious is if it has
-been commanded closed in response to a duct overheat and it fails to
-close. Manual control may be effective, but if it is not the only option is to
-turn off both packs and proceed as per Section \ref{sec-pack-fault}.
+effects will depend on its actual position.
+
+If it is closed when commanded open, the packs will provide basic temperature
+regulation.
+
+More serious is if it has been commanded closed in response to a duct overheat
+and it remains open. Manual control may be effective, but if it is not the
+only option is to turn off both packs and proceed as per Section
+\ref{sec-pack-fault}.
 
 \multicite{\uline{COND}~HOT~AIR~FAULT, FCOM~PRO.AEP.COND}
 
