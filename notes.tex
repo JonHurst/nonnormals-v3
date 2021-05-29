@@ -9,7 +9,7 @@
 \usepackage[color]{changebar}
 \cbcolor{blue}
 \usepackage{array}
-\usepackage[hidelinks]{hyperref}
+\usepackage[pdfauthor={Jon Hurst},hidelinks]{hyperref}
 \usepackage[normalem]{ulem}
 \title{A320 Family Non-Normal-Notes\\~\\\large{Version 2.6}}
 \author{Jon Hurst}
@@ -109,83 +109,97 @@ continue to climb for some time after a significant braking event.
 \multicite{EOMB~3.10, FCTM~PRO.AEP.MISC}
 
 
-\section{Failures during takeoff when above V1}
-\label{sec-failures-after-v1}
+\section{Asymmetric takeoff}
 
-If an engine has lost thrust, apply rudder conventionally. At V\textsubscript{r}
-rotate towards an initial pitch target of 12\textonehalf\textdegree{ }at a
-slightly reduced rate, then target speed \V{2} to \V{2}+15kt. Bank angle should
-be limited to 15\textdegree{ }when more than 3kt below manoeuvring speed for the
-current configuration\footnote{This is a conservative rule of thumb. If the
-\ac{FMGC} has correctly identified an engine out condition, the \ac{FD/AP} will
-automatically limit bank angle according to a less conservative
-algorithm (see \inlcite{FCOM~SYS.22.20.60.40})}.
+Apply rudder conventionally to maintain runway track. At V\textsubscript{r}
+rotate at a slightly reduced rate towards an initial pitch target of
+12\textonehalf\textdegree\, then target speed \V{2} to \V{2}+15kt. Bank angle
+should be limited to 15\textdegree{ }when more than 3kt below manoeuvring speed
+for the current configuration\footnote{This is a conservative rule of thumb. If
+the \ac{FMGC} has correctly identified an engine out condition, the \ac{FD/AP}
+will automatically limit bank angle according to a less conservative algorithm
+(see \inlcite{FCOM~SYS.22.20.60.40})}.
 
 When the ground to flight mode transition is complete\footnote{Introducing
 \ac{TOGA} during the ground to flight mode transition (commences as the pitch
-increases through 8\textdegree, complete after 5 seconds) results in a pitch
-up moment at a time where the effect of stick pitch control is not wholly
+increases through 8\textdegree, complete after 5 seconds) results in a pitch up
+moment at a time where the effect of stick pitch control is not wholly
 predictable: the stick will need to be moved forward of neutral to counteract
 the introduced pitch moment and then returned to neutral as flight mode blends
 in. A slight pause before selecting \ac{TOGA} results in much more normal and
-predictable handling.}, select \ac{TOGA} (\ac{FLX} may be used but this tends to
-allow speed to decay unless pitch is reduced), adjust and trim rudder to
-maintain $\beta$ target and request ``pull heading''. If the \ac{EOSID} follows
-the track of the cleared \ac{SID}, \ac{NAV} may be used, but this is very rare
-with easyJet \ac{EOSID}s.  Engage the autopilot once gear is up and rudder is
-trimmed.
+predictable handling.}, select \ac{TOGA}\footnote{\ac{FLX} may be used but this
+tends to allow speed to decay unless pitch is reduced}. Adjust and trim rudder
+to maintain $\beta$ target; this will result in a small side-slip angle towards
+the failed engine. Engage the autopilot once gear is up and rudder is trimmed.
 
-Whilst below 400ft, the only failure related actions should be:
+%%  and request ``pull heading''. If the \ac{EOSID}
+%% follows the track of the cleared \ac{SID}, \ac{NAV} may be used, but this is
+%% very rare with easyJet \ac{EOSID}s.
+
+\section{Low level failure handling}
+\label{sec-failures-after-v1}
+
+Handling of failures that occur on the takeoff roll or at very low level is
+primarily a test of triage skills. Airbus provides support in three ways:
+
 \begin{itemize}
-\item If applicable, \ac{PM} should state the title of the first displayed
-  \ac{ECAM} procedure, but should delay confirmation.
-
-\item Cancellation of master warning or master caution when both pilots confirm
-  they are aware of it.
-
-\item Heightened awareness of the possibility of missing essential normal
-  actions, such as calling rotate or raising the gear due to the distraction of
-  the failure.
+\item \ac{ECAM} flight phase inhibitions filter out less serious failures until
+  1500ft \ac{AAL} is attained on climb out or speed is below 80kt on the landing
+  roll.
+\item \ac{TOGA} thrust is made available for an extra 5 minutes (giving a total
+  of 10 minutes) in emergency situations, which allows more time before
+  acceleration and cleanup is required.
+\item A recommendation is published at the start of the \ac{QRH}, that, apart
+  from cancelling audio warnings, ``no action will be taken'' until an
+  appropriate flight path is established and the aircraft is at least 400ft
+  \ac{AGL}\footnote{\ldots although it does go on to water this statement down
+  by saying that, for some unspecified emergency situations, the 400ft part of
+  the recommendation may be disregarded}.
 \end{itemize}
 
+Whilst below 400ft, then, the focus should be on flying and monitoring, with
+heightened awareness of the possibility of missing essential normal actions,
+such as calling rotate or raising the gear due to the distraction of the
+failure. It may help \ac{PF} assimilate the challenges of the flying task if
+\ac{PM} states the title of the first displayed \ac{ECAM} procedure, but no
+action to diagnose or contain the failure should be taken. A very quick and well
+timed ``Mayday, Mayday, Mayday, standby'' and ``Attention Crew at Stations''
+from \ac{PM} may also be useful to forestall external interruptions. When and if
+possible, the autopilot should be engaged to reduce workload.
 
-Once above 400ft with safe flight path assured, decide on an initial
-strategy. In general, where a loss of thrust has occurred or is anticipated, the
-strategy will be to fly the \ac{EOSID} with a level acceleration segment (see
-Section \ref{sec-eosid}). Otherwise, it will be to remain on the normal \ac{SID}
-and fly a normal climb profile. Any deviation from the cleared \ac{SID} will
-require \ac{ATC} to be informed as a priority, usually as part of a Pan or
-Mayday message. In rare cases where the cleared \ac{SID} requires a very early
-turn it may be necessary to determine and action a strategy when below 400ft. If
-this is the case, it must be thoroughly briefed.
+An extremely useful tool for dealing with low level failures is the \ac{EOSID},
+as described in Section \ref{sec-eosid}. While the name suggests that this is
+only to be used with engine failures, in reality it is a pre-planned safe flight
+path that may be flown whenever there is doubt that available aircraft
+performance is sufficient to fly the cleared \ac{SID} or go-around. Since both
+pilots should already be aware of the details of the \ac{EOSID}, \ac{PM} can
+simply declare their intention to fly it to generate a shared mental model.
+Note that flying an \ac{EOSID} is higher workload than flying the planned
+\ac{SID} in \ac{NAV} or flying visually; it is an option, not a requirement.
 
-Once the flight path strategy has been agreed and actioned, the failure can be
-triaged, diagnosed and contained. Once the diagnosis is agreed, \ac{PF} will
-take the radios and request \ac{PNF} to carry out the containment actions. The
-standard phraseology is ``My Radios, \ac{ECAM} actions''. \ac{PF} taking the
-radios is also a good trigger to consider a Mayday and an ``Attention crew at
-stations''.
-
-When applying \ac{ECAM} procedures, \ac{PF} is responsible for moving the thrust
-levers once confirmed by \ac{PNF}. \ac{PNF} is responsible for everything else,
-but movement of engine master switches, \ac{IR} selectors and any guarded switch
-must be confirmed with \ac{PF}.
-
-\ac{PNF} indicates high priority tasks are completed with the phrase ``Engine is
-secure.''  This call is not official \ac{SOP} (i.e. it is not mentioned in any
-manual), but has evolved to be standard in the sim since it is \ac{PF}'s trigger
-to interrupt \ac{ECAM} and accelerate.  High priority tasks are defined as:
+Another useful tool, often used in association with the \ac{EOSID}, is the
+concept of ``high priority tasks''. These are defined as:
 
 \begin{itemize}
 \item For engine failure, the master switch of the affected engine has been
   turned off.
 
-\item For engine fire, one squib has been fired and the fire warning has
-  extinguished or both squibs have been fired.
+\item For engine fires, \emph{either} one squib has been fired and the fire
+  warning has extinguished \emph{or} both squibs have been fired.
 \end{itemize}
 
-\multicite{FCTM~PRO.AEP.ENG}
+These definitions help with the triage process, allowing standardised
+interleaving of the diagnosis and containment of the failure with the flying and
+monitoring tasks. In particular, the level acceleration phase of the \ac{EOSID}
+is generally delayed until these tasks are completed, with the phrase ``engine
+is secure'' a de facto standard call to indicate that \ac{PF} might like to
+consider interrupting the containment process\footnote{The phrases ``Stop
+\ac{ECAM}'' and ``Continue \ac{ECAM}'' are standard for interrupting
+containment.}.  Unfortunately, they are only defined for engine failures and
+fires, so with other failures, the crew will have to make a judgement call as to
+what constitutes ``high priority''.
 
+\multicite{FCTM~PRO.AEP.ENG}
 
 \section{EOSID}
 \label{sec-eosid}
