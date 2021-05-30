@@ -1,8 +1,7 @@
 pdf: pdf/notes.pdf
 
 pdf/notes.pdf: notes.tex
-	pdflatex -output-directory pdf notes.tex
-	pdflatex -output-directory pdf notes.tex
+	latexmk -pdflatex -output-directory=pdf notes.tex
 
 html: build/lastbuilt
 
