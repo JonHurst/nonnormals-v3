@@ -43,6 +43,8 @@
 \label{sec-loss-of-braking}
 \label{sec-all-engine-failure}
 \label{sec-gravity-fuel-feeding}
+\label{sec-alternate-law}
+\label{sec-nose-wheel-steering}
 %%%%%%%%%%%%%%%%
 \section{Rejected Takeoff}
 The decision to reject rests solely with \ac{CM}1. This decision is communicated
@@ -1148,7 +1150,7 @@ line (deploy the \ac{RAT} manually if required) and maintain speed >140kt to avo
 and when below \ac{FL}250, the \ac{APU} can be started.
 
 So much equipment is lost in the emergency configuration that \ac{QRH}
-\ecam{ELEC}{elec emer config summary} provides a table of \emph{surviving}
+\ecam{ELEC}{emer config sys remaining} provides a table of \emph{surviving}
 equipment. Notable losses are:
 
 \begin{itemize}
@@ -1159,12 +1161,14 @@ equipment. Notable losses are:
   with the higher landing speeds required to prevent \ac{RAT} stall this results
   in significantly increased landing distances.
 
-\item Alternate Law with reduced protections. Mechanical yaw becoming Alternate
-  Law yaw with \ac{FAC}1 reset. Anticipate Direct Law at gear extension.
+\item Alternate Law with reduced protections (see Section
+  \ref{sec-alternate-law}). Mechanical yaw becomes Alternate Law yaw with
+  \ac{FAC}1 reset. Anticipate Direct Law at gear extension.
 
-\item Anti-icing for probes supplying the standby instruments.
+\item Anti-icing for probes supplying \ac{ADR}2 and \ac{ADR}3. Only \ac{CM}1
+  instruments should be considered reliable in icing conditions.
 
-\item Nose Wheel Steering.
+\item Nose Wheel Steering (see Section \ref{sec-nose-wheel-steering}).
 \end{itemize}
 
 The \ac{QRH} \ecam{ELEC}{elec emer config summary} should be applied once
