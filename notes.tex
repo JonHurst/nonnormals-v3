@@ -1320,18 +1320,19 @@ causes loss of redundancy only. Landing distances are unchanged.
 
 \section{DC Bus 2 fault}
 
-Some or all of the equipment on \ac{DC} Bus 2 is lost. The F/O’s static probe sensor
-is lost, so \ac{ADR}3 should be selected on the F/O’s side. \ac{FCU}2 is lost, so check
-that the baro ref on the \ac{FCU} and \ac{PFD} agree. Landing distance increases by up to
-35\% due to the loss of 3 ground spoilers per side and one reverser. Autobrake
-is also unavailable. Due to the loss of \ac{SFCC}2, the slats and flaps will be slow
-and the engines will remain in approach idle. \ac{FAC}2 is lost, so the
-characteristic speeds on both \ac{PFD}s are provided by \ac{FAC}1. F/O window heat, wipers
-and rain repellent are lost.
+Some or all of the equipment on \ac{DC} Bus 2 is lost. Notable items are:
+
+\begin{itemize}
+\item 3 spoilers per side and one reverser. Landing distances increase by
+  $\sim$35\%.
+\item Autobrake.
+\item \ac{FO}'s static probe: select \ac{ADR}3 to \ac{FO}'s side.
+\item \ac{FO}'s window heat, wipers and rain repellent.
+\end{itemize}
 
 The other lost systems either have redundant backups or are non-essential. It
-should be noted that the only flight computers remaining are \ac{ELAC} 1, \ac{SEC} 1 and
-\ac{FAC} 1.
+should, however, be noted that the only flight computers remaining are
+\ac{ELAC}1, \ac{SEC}1 and \ac{FAC}1, so not much redundancy remains.
 
 \multicite{\uline{ELEC}~DC~BUS~2~FAULT, FCOM~PRO.AEP.ELEC}
 
