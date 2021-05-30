@@ -67,7 +67,7 @@ never happen due to \ac{FADEC} logic. The second generates a message on the
 \ac{EWD} but no master caution (it is the computers that generate master
 cautions that have failed). You could therefore modify this rule to: stop for
 any \ac{ECAM} warning or caution except the caution-like \ecam{FWS}{FWC 1+2
-  FAULT}.} or anything which indicates the aircraft will be unsafe or unable to
+  FAULT}.}, or anything which indicates the aircraft will be unsafe or unable to
 fly.
 
 If a stop is required, \ac{CM}1 calls ``Stop'' while simultaneously bringing the
@@ -121,20 +121,20 @@ Apply rudder conventionally to maintain runway track. At V\textsubscript{r}
 rotate at a slightly reduced rate towards an initial pitch target of
 12\textonehalf\textdegree\, then target speed \V{2} to \V{2}+15kt. Bank angle
 should be limited to 15\textdegree{ }when more than 3kt below manoeuvring speed
-for the current configuration\footnote{This is a conservative rule of thumb. If
+for the current configuration.\footnote{This is a conservative rule of thumb. If
 the \ac{FMGC} has correctly identified an engine out condition, the \ac{FD/AP}
 will automatically limit bank angle according to a less conservative algorithm
-(see \inlcite{FCOM~SYS.22.20.60.40})}.
+(see \inlcite{FCOM~SYS.22.20.60.40})}
 
-When the ground to flight mode transition is complete\footnote{Introducing
+When the ground to flight mode transition is complete,\footnote{Introducing
 \ac{TOGA} during the ground to flight mode transition (commences as the pitch
 increases through 8\textdegree, complete after 5 seconds) results in a pitch up
 moment at a time where the effect of stick pitch control is not wholly
 predictable: the stick will need to be moved forward of neutral to counteract
 the introduced pitch moment and then returned to neutral as flight mode blends
 in. A slight pause before selecting \ac{TOGA} results in much more normal and
-predictable handling.}, select \ac{TOGA}\footnote{\ac{FLX} may be used but this
-tends to allow speed to decay unless pitch is reduced}. Adjust and trim rudder
+predictable handling.} select \ac{TOGA}.\footnote{\ac{FLX} may be used but this
+tends to allow speed to decay unless pitch is reduced} Adjust and trim rudder
 to maintain $\beta$ target; this will result in a small side-slip angle towards
 the failed engine. Engage the autopilot once gear is up and rudder is trimmed.
 
@@ -158,9 +158,9 @@ primarily a test of triage skills. Airbus provides support in three ways:
 \item A recommendation is published at the start of the \ac{QRH}, that, apart
   from cancelling audio warnings, ``no action will be taken'' until an
   appropriate flight path is established and the aircraft is at least 400ft
-  \ac{AGL}\footnote{\ldots although it does go on to water this statement down
+  \ac{AGL}.\footnote{\ldots although it does go on to water this statement down
   by saying that, for some unspecified emergency situations, the 400ft part of
-  the recommendation may be disregarded}.
+  the recommendation may be disregarded}
 \end{itemize}
 
 Whilst below 400ft, then, the focus should be on flying and monitoring, with
@@ -199,9 +199,9 @@ interleaving of the diagnosis and containment of the failure with the flying and
 monitoring tasks. In particular, the level acceleration phase of the \ac{EOSID}
 is generally delayed until these tasks are completed, with the phrase ``engine
 is secure'' a de facto standard call to indicate that \ac{PF} might like to
-consider interrupting the containment process\footnote{The phrases ``Stop
+consider interrupting the containment process.\footnote{The phrases ``Stop
 \ac{ECAM}'' and ``Continue \ac{ECAM}'' are standard for interrupting
-containment.}.  Unfortunately, they are only defined for engine failures and
+containment.}  Unfortunately, they are only defined for engine failures and
 fires, so with other failures, the crew will have to make a judgement call as to
 what constitutes ``high priority''.
 
