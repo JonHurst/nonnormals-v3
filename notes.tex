@@ -1404,18 +1404,24 @@ Shed some load by switching off the galleys.
 
 \section{Loss of TRs}
 
-No systems are lost as a result of failure of a single \ac{TR}. If the fault is with
-\ac{TR}1 or \ac{TR}2, \ac{DC} \ac{ESS} will be supplied by the \ac{ESS} \ac{TR} via \ac{AC} \ac{ESS}; in this case only
-Cat 3 single will be available.
+\looseness=1
+No systems are lost as a result of failure of a single \ac{TR}. If the fault is
+with \ac{TR}1 or \ac{TR}2, \ac{DC ESS} will be supplied by the \ac{ESS TR} via
+the \ac{AC} essential bus; in this case only Cat 3 single will be available.
 
-If \ac{TR}1 and \ac{TR}2 are both lost then \ac{DC} Bus 1, \ac{DC} Bus 2 and the \ac{DC} Battery Bus will
-also be lost. \ac{DC} \ac{ESS} will remain powered by the \ac{ESS} \ac{TR}. The \ac{FCOM} is not very
-forthcoming regarding this failure; there is only a description in the \ac{DSC}
-section and nothing specific in the \ac{PRO} section. The situation is, however, very
-similar to the “\ac{ECAM} complete” phase of <xref linkend="dc-emerg-conf"/>; the
-only difference is that \ac{AC} 1 rather than the emergency generator is providing
-the power to the \ac{ESS} \ac{TR}, and hence you don’t need to worry about \ac{RAT} deployment
-or \ac{RAT} stall.
+\looseness=1
+Dual failures involving the \ac{ESS TR} are similar to single failures, except
+redundancy is further compromised. If, however, both \ac{TR}1 and \ac{TR}2 fail
+then \ac{DC} bus 1, \ac{DC} bus 2 \emph{and} the \ac{DC} battery bus will be
+lost. The \ac{DC} essential bus will remain powered by the \ac{ESS TR}.
+
+The \ac{FCOM} is not very forthcoming regarding this failure; there is only a
+description in the \ac{DSC} section and nothing specific in the \ac{PRO}
+section. The situation is, however, very similar to the “\ac{ECAM} complete”
+phase of \ac{DC} emergency configuration (see Section \ref{sec-dc-emer-conf}),
+the only difference being that \ac{AC} bus 1 rather than the emergency generator
+is providing the power to the \ac{ESS TR}, and hence you don’t need to worry
+about \ac{RAT} deployment.
 
 \multicite{\uline{ELEC}~TR~1(2), \uline{ELEC}~ESS~TR~FAULT, FCOM~PRO.AEP.ELEC}
 
