@@ -1143,6 +1143,7 @@ similar to smoke configuration. No crew action is required.
 \chapter{Electrical}
 
 \section{Emergency configuration}
+\label{sec-emerg-elec}
 
 Attempt to restore normal power by recycling the main generators. If that fails,
 try again after splitting the systems with the \ac{BUS TIE} button.
@@ -1182,13 +1183,26 @@ The \ac{QRH} \ecam{ELEC}{elec emer config summary} should be applied once
 
 \section{Battery only}
 
-Power is available for approximately 30 mins.\footnote{This information was
+Battery power is available for approximately 30 mins.\footnote{This information was
 part of Airbus \ac{CBT} training. There is no figure available in the \ac{FCOM}.}
-QRH AEP.ELEC provides details of remaining equipment. This is very similar to
-the emergency electrical configuration (see <xref>) with the additional loss of
-\ac{FAC}1 and \ac{FMGC}1. An attempt should be made to bring the emergency generator on
-line by ensuring speed is >140kt and deploying the \ac{RAT} with the \ac{EMER} \ac{ELEC} \ac{PWR}
-\ac{MAN} \ac{ON} button.
+
+\ac{QRH} \ecam{ELEC}{emer config sys remaining} provides details of remaining
+equipment. Mostly this is the same as for emergency electrical configuration (see
+Section \ref{sec-emerg-elec}). Notable additional losses are:
+
+\begin{itemize}
+\item The remaining \ac{ND}
+\item The remaining \ac{FMGC} and \ac{MCDU}
+\item The remaining \ac{DME} and Transponder
+\item The remaining \ac{FAC}
+\item Wing anti-ice
+\item \ac{CM}1 \ac{AOA} anti-ice
+\item Passenger oxygen masks
+\end{itemize}
+
+An attempt should be made to bring the emergency generator on line by ensuring
+speed is >140kt and deploying the \ac{RAT} with the \cphrase{EMER ELEC PWR MAN
+  ON} button.
 
 \multicite{\uline{ELEC}~ESS~BUSES~ON~BAT, QRH~AEP.ELEC, FCOM~PRO.AEP.ELEC}
 
