@@ -1436,17 +1436,21 @@ are \ac{APU} fire detection and \ac{APU} battery start.
 
 \section{DC Emergency configuration}
 \label{sec-dc-emer-conf}
-Defined as the loss of \ac{DC} \ac{BUSSES} 1 + 2, \ac{DC} \ac{ESS} \ac{BUS} and \ac{DC} \ac{BAT} \ac{BUS}. Recovery
-assumes that the \ac{DC} \ac{ESS} \ac{BUS} can be fully restored by deploying the \ac{RAT} with the
-\ac{EMER} \ac{ELEC} \ac{PWR} button.
+Defined as the loss of \ac{DC} busses 1 and 2, the \ac{DC} essential bus and the
+battery bus. Recovery assumes that the \ac{DC} essential bus can be fully
+restored by deploying the \ac{RAT} with the \ac{EMER ELEC PWR} button.
 
-Equipment powered or controlled through \ac{DC} \ac{BUS} 1, \ac{DC} \ac{BUS} 2 and the \ac{BAT} \ac{BUS} is
-lost. Loss of the equipment associated with the \ac{BAT} \ac{BUS} is fairly benign: mainly
-\ac{APU} Battery Start is unavailable due to loss of the \ac{APU} \ac{ECB} and \ac{APU} fire
-detection is inop. A lot of equipment is lost with the loss of \ac{DC} \ac{BUS} 1+2, but
-it is worth remembering that all three busses are also lost in Emergency
-Electrical Config, so you will have, at minimum, all the equipment detailed in
-QRH~24.1. The main items of note are:
+Equipment powered or controlled through \ac{DC} busses 1 and 2 and the battery
+bus is therefore lost.
+
+Loss of the equipment associated with the battery bus is fairly benign: mainly
+\ac{APU} battery start is unavailable due to loss of the \ac{APU ECB} and
+\ac{APU} fire detection.
+
+A lot of equipment is lost with the loss of \ac{DC} busses 1 and 2, but it is
+worth remembering that all three affected busses are also lost in emergency
+electrical config. Thus, you will have, at minimum, all the equipment listed in
+\ac{QRH} \ecam{ELEC}{emer config sys remaining}. The main items of note are:
 
 \begin{itemize}
 
@@ -1456,26 +1460,24 @@ QRH~24.1. The main items of note are:
   manual braking is available.\footnote{easyJet aircraft automatically modulate
   to 1000psi, but the sim may not.}
 
-  \item Flight computer redundancy is significantly reduced, with only \ac{ELAC} 1,
-    \ac{SEC} 1 and \ac{FAC} 1 available. This is, however, sufficient to keep Normal Law,
-    so a \ac{CONF} \ac{FULL} landing and, indeed, \ac{CAT} 3 \ac{SINGLE} autoland (using \ac{AP}1 and
-    \ac{FMGS}1) are available. The latter may be useful since wipers and window heat
-    are lost. Only \ac{FCU} 1 is available.
-
-  \item Deployment of lift devices is slow due do loss of \ac{SFCC} 2, but they are
-    all available. Normal gear operation is available through \ac{LGCIU} 1.
+  \item Flight computer redundancy is significantly reduced, with only
+    \ac{ELAC}1, \ac{SEC}1 and \ac{FAC}1 available. This is, however, sufficient
+    to keep Normal Law, so a \ac{CONF} Full landing and, indeed, Cat 3
+    Single autoland (using \ac{AP}1 and \ac{FMGS}1) are available.
 
   \item Pressurised fuel is available from the \#1 wing tank pumps, but center
     tank fuel is unusable.
 
   \item Redundancy in the pressurisation system is seriously compromised. Manual
-    pressure control and \ac{CPC} 2 are lost, so you are reliant on \ac{CPC} 1 for
-    control. Pack 2, \ac{BMC} 2 and cross bleed control are all lost, so you are
-    reliant on \ac{ENG} 1 Bleed and Pack 1 for supply. Ram Air remains available, so
-    if required a slow depressurisation through turning off Pack 1 followed by a
-    depressurised landing with Ram Air is achievable.
+    pressure control and \ac{CPC}2 are lost, so you are reliant on \ac{CPC}1 for
+    control. Pack 2, \ac{BMC}2 and cross bleed control are all lost, so you are
+    reliant on \ac{ENG}1 bleed and pack 1 for supply. Ram air remains available, so
+    if required a slow depressurisation through turning off pack 1 followed by a
+    depressurised landing with ram air is achievable.
 
-  \item Communications are limited to \ac{VHF} 1, controlled by \ac{RMP} 1.
+  \item Communications are limited to \ac{VHF}1, controlled by \ac{RMP}1. All
+    communications will be lost below 100kt on the landing roll when the \ac{DC}
+    essential bus is depowered.
 
   \item Redundancy in the fire detection and suppression systems is
     compromised. The engines each retain one detection loop and one fire
