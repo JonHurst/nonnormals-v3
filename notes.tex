@@ -42,6 +42,7 @@
 %labels to be moved once section is processed
 \label{sec-loss-of-braking}
 \label{sec-all-engine-failure}
+\label{sec-gravity-fuel-feeding}
 %%%%%%%%%%%%%%%%
 \section{Rejected Takeoff}
 The decision to reject rests solely with \ac{CM}1. This decision is communicated
@@ -1139,39 +1140,35 @@ similar to smoke configuration. No crew action is required.
 \section{Emergency configuration}
 
 Attempt to restore normal power by recycling the main generators. If that fails,
-try again after splitting the systems with the \ac{BUS} \ac{TIE} button.
+try again after splitting the systems with the \ac{BUS TIE} button.
 
 If normal power cannot be restored, ensure that the emergency generator is on
 line (deploy the \ac{RAT} manually if required) and maintain speed >140kt to avoid
 \ac{RAT} stall. Cycling \ac{FAC} 1 will recover rudder trim. Once 45 seconds have elapsed
 and when below \ac{FL}250, the \ac{APU} can be started.
 
-So much equipment is lost in the emergency configuration that QRH~AEP.ELEC
-provides a table of surviving equipment. Notable losses are:
+So much equipment is lost in the emergency configuration that \ac{QRH}
+\ecam{ELEC}{elec emer config summary} provides a table of \emph{surviving}
+equipment. Notable losses are:
 
 \begin{itemize}
-\item All the fuel pumps, requiring Gravity Fuel Feeding procedures to be used
-  (see <xref linkend="gravity-feeding"/>) and making center tank fuel
-  unusable.
+\item All the fuel pumps, requiring Gravity Fuel Feeding procedures (see Section
+  \ref{sec-gravity-fuel-feeding}) and making center tank fuel unusable.
 
 \item The anti-skid, three fifths of the spoilers and the reversers. Combined
-  with the higher landing speeds required to prevent \ac{RAT} stall this results in
-  significantly increased landing distances.
+  with the higher landing speeds required to prevent \ac{RAT} stall this results
+  in significantly increased landing distances.
 
 \item Alternate Law with reduced protections. Mechanical yaw becoming Alternate
-  Law yaw with \ac{FAC}1 reset. Anticipate Direct Law at gear extension and be
-  prepared for a Direct Law go around. Manual pitch trim is
-  available.
+  Law yaw with \ac{FAC}1 reset. Anticipate Direct Law at gear extension.
 
-\item Anti-icing for probes supplying the standby instruments: in case of
-  disagreement, go with the \ac{CM}1 instruments.
+\item Anti-icing for probes supplying the standby instruments.
 
-\item Nose Wheel Steering. Use differential braking to clear the
-  runway.
+\item Nose Wheel Steering.
 \end{itemize}
 
-QRH~AEP.ELEC also provides a paper summary which should be applied once \ac{ECAM}
-actions are complete.
+The \ac{QRH} \ecam{ELEC}{elec emer config summary} should be applied once
+\ac{ECAM} actions are complete.
 
 \multicite{\uline{ELEC}~EMER~CONFIG, QRH~AEP.ELEC, FCOM~PRO.AEP.ELEC}
 
