@@ -1339,39 +1339,37 @@ should, however, be noted that the only flight computers remaining are
 
 \section{DC Essential Bus fault}
 
-The major headache associated with \ac{DC} Essential Bus failure is significant loss
-of communications systems. This is exacerbated by a design flaw which, at time
-of writing, affects \ac{MSN}s 2037–2402 and \ac{MSN}s 2471–3122. By design, \ac{ACP}1 and \ac{ACP}2
-are lost, along with \ac{VHF}1. This allows two-way communication to be recovered by
-one pilot using \ac{ACP}3 (selected via the \ac{AUDIO} \ac{SWTG} rotary selector) with \ac{VHF}2 or
-\ac{VHF}3. Since speaker 1 is also lost, having P2 handle the radios with speaker 2
-at high volume is the only method of both pilots having awareness of \ac{ATC}
-communications. On the \ac{MSN}s detailed above, however, the audio cards connecting
-cockpit mikes and headsets are <emphasis>all</emphasis> powered from the \ac{DC}
-Essential Bus. It may be possible to receive transmissions with a combination of
-\ac{VHF}2/3, \ac{ACP}3 on \ac{FO} and speaker 2 on, but transmission is limited to morse code
-on the transmit switch\footnote{I am only inferring this solution from the list
-of equipment lost; there is no specific documentation to indicate that it will
-work.}.
+The major headache associated with \ac{DC} essential bus failure is a
+significant loss of redundancy in communications systems.
 
-\ac{FCU}1 is lost, so the baro refs should be checked. The \ac{GPWS} is lost and should be
-turned off.
+\ac{ACP}1 and \ac{ACP}2 are lost, along with \ac{VHF}1. This allows two-way
+communication to be recovered by one pilot using \ac{ACP}3 (selected via the
+\ac{AUDIO SWTG} rotary selector) with \ac{VHF}2 or \ac{VHF}3. Since speaker 1 is
+also lost, having \ac{CM}2 handle the radios with speaker 2 at high volume is
+the only method of both pilots having awareness of \ac{ATC} communications.
 
-Landing distances are increased due to the loss of reverser 2 and the loss of
-the blue hydraulic system (and hence spoiler 3). Wing anti-ice is also lost, so
-landing distances will also increase significantly if ice is accreted and
-increased approach speeds are required.
+On some airframes,\footnote{\ac{MSN}s 2184–2402 and \ac{MSN}s 2471–3122 at time
+of writing.}\ this loss of communications is exacerbated by a design flaw: the
+audio cards for cockpit mikes and headsets are \emph{all} powered from the
+\ac{DC} essential bus. It may still be possible to receive transmissions with a
+combination of \ac{VHF}2/3, \ac{ACP}3 on \ac{FO} and speaker 2, but transmission
+is limited to morse code on the transmit switch.\footnote{I am only inferring
+this solution from the list of equipment lost; there is no specific
+documentation to indicate that it will work.}
 
-Slats and flaps are slow due to the loss of \ac{SFCC}1. This also leads to the
-engines reverting to approach idle.
+Other notable lost equipment includes:
 
-Landing capability is Cat 2 due to the loss of the auto-thrust. The \ac{ECAM} status
-page incorrectly reports Cat 3 single.
-
-The \ac{FCOM} lists additional systems beyond those listed on the \ac{STATUS} page that
-are lost with \ac{DC} Essential Bus failure. Of note among these is loss of \ac{HP} fuel
-shutoff valves. This requires that the engines are shut down with the Engine
-Fire pushbutton switches.
+\begin{itemize}
+\item Reverser 2 and the blue hydraulic system, leading to modestly increased
+  landing distances.
+\item The \ac{HP} fuel shutoff valves. This requires that the engines are shut
+  down with the Engine Fire pushbutton switches.
+\item Wing anti-ice.
+\item Auto-thrust. This is notable because the \ac{ECAM} status page incorrectly
+  reports that Cat 3 single is available, when the actual landing capability is
+  Cat 2.
+\item GPWS.
+\end{itemize}
 
 \multicite{\uline{ELEC}~DC~ESS~BUS~FAULT, FCOM~PRO.AEP.ELEC}
 
