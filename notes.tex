@@ -44,6 +44,7 @@
 \label{sec-gravity-fuel-feeding}
 \label{sec-alternate-law}
 \label{sec-nose-wheel-steering}
+\label{sec-alternate-law}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -1520,6 +1521,185 @@ circuit breaker is left tripped, additional tripped circuit breakers on the same
 panel will not be detected.
 
 \multicite{\uline{C/B}~TRIPPED, FCOM~PRO.AEP.ELEC}
+
+
+\chapter{Flight Controls}
+
+
+\section{Flaps and/or slats fault/locked}
+
+The most pressing concern following a flap or slat problem is to select a safe
+initial speed that will avoid overspeeding the stuck device. To establish a
+conservative \V{max}:
+
+\begin{itemize}
+\item If the failure occurred while \emph{deploying} surfaces, use the placarded
+  \V{FE} associated with the \emph{new} flap lever position. The \V{max}
+  displayed on the \ac{PFD} will be this \V{FE}.\footnote{The \V{max} displayed
+  on the \ac{PFD} is a function of flap lever position. Conversely, the
+  \ac{ecam} \ac{overspeed} warning is a function of actual flap and slat
+  positions.}
+\item If the failure occurred while \emph{retracting} surfaces, use the
+  placarded \V{FE} associated with the \emph{previous} flap lever
+  position. Consider returning the flap lever to this position to get this
+  \V{FE} displayed on the \ac{PFD}.
+\end{itemize}
+
+For minimum speed, the \V{LS} displayed on the \ac{PFD} is calculated from
+actual flap and slat position and can be trusted. If \V{LS} is unavailable, fly
+\V{max}~$-$~5kt.
+
+Unless there is an obvious reason not to (e.g. wing tip brake on, alignment
+fault or fault due to dual hydraulic failure), the flap lever can be recycled.
+
+If normal operation cannot be restored, there are two major issues that must be
+quickly addressed. Firstly, fuel burn will be dramatically higher when flying
+with a locked device. With slats extended, fuel burn will increase by 60\%. With
+flaps extended it will increase by 80\%. With \emph{both} slats and flaps
+extended, fuel burn will double. These figures are available in
+\cphrase{QRH~OPS}. The second issue is that landing distances are significantly
+increased, in the worst case by a factor of 2.2. It may be that the combination
+of these factors requires a prompt diversion decision.
+
+The flap and slat systems are largely independent, so the flap lever will
+continue to move the slats if the flaps are locked and vice versa. In general,
+\ac{conf} 3 should be selected for landing. There are two exceptions. If flaps
+are locked at >3, \ac{conf} Full should be used. If both slats and flaps are
+locked at 0, \ac{conf} 1 should be used so that the \ac{AP/FD} go-around is
+armed. Configurations and \V{REF} increments are available in the \ac{QRH} or
+from the \ac{EFB}. If a flapless and slatless landing is required, the threshold
+speed may be below \V{LS}. This is necessary as the landing speeds in this
+configuration are very close to tyre limit speeds.
+
+Generally, the deployment method is to select a speed 5kt below \V{FE~NEXT},
+then select the next configuration as the speed reduces \emph{through}
+\V{FE~NEXT}.\footnote{\V{FE~NEXT} is a function of flap lever position, so it
+takes no account of the failure. Since it is likely that for any given
+configuration there are fewer high lift surfaces than normal deployed, the next
+configuration is selected as soon as possible, even at the risk of turbulence
+causing a slight overspeed. If \V{FE~NEXT} is not available, placarded speeds
+can be used instead.}
+
+In the case where \V{LS}>\V{FE~NEXT}, prioritise \V{LS}: fly \V{LS}, select the
+next configuration, then track \V{LS} as it reduces with the extension of the
+lift device. Use of autothrust with selected speed is generally recommended for
+all phases of the approach, but in this case it will need to be temporarily
+disconnected.
+
+The autopilot may be used down to 500ft \ac{AAL}, but since it is not tuned for
+the abnormal configuration it must be closely monitored.
+
+For the go-around, initially maintain flap/slat configuration. A speed 10kt
+lower than max operating speed should be flown. If it is the slats that are
+jammed or if the flaps are jammed at 0, \ac{conf}~0 can be selected for transit
+to a diversion airfield. To clean up, accelerate to \V{Max} $-$ 10kt before
+selecting each new configuration. Transit should be at \V{Max} $-$ 10kt unless
+clean.
+
+Other issues include the possible loss of the automatic operation of the center
+tank pumps (which is sequenced to the slats) and possible reversion to Alternate
+Law.
+
+It is also worth noting that failure of the slat channels of both \ac{SFCC}s
+appears to result in the loss of characteristic speed display on both
+\ac{PFD}s. This is not mentioned in the \ac{FCOM} but occurs in the sim. The
+upshot of this is that neither \V{LS} nor \V{SW} are available at all, since
+they are not displayed and there is no way to calculate them. This is of
+particular concern when trying to deploy \ac{conf}~2 on the approach: \ac{conf}
+1 does not extend flaps, so the aircraft will still be clean, yet must be slowed
+to the \V{FE} for \ac{conf}~2. It is highly likely that the stall warner will
+activate during this transition, and if not anticipated, the subsequent recovery
+will overspeed the flaps. The solution is to brief that speed will be reduced
+very slowly and if the stall warning occurs the speed will be maintained whilst
+allowing the deployment of the flaps to recover the stall margin.
+
+\multicite{\uline{F/CTL}~FLAPS(SLATS)~FAULT(LOCKED), QRH AEP.F/CTL,\\
+  FCOM~PRO.AEP.F/CTL}
+
+
+\section{Elevator faults}
+
+If a single elevator fails, the \ac{SEC}s use the remaining elevator to provide
+pitch control in alternate law (see Section \ref{sec-alternate-law}). In
+addition, speed brake should not be used and the autopilots are unserviceable.
+
+If both elevators fail, the only available mechanism for pitch control is manual
+pitch trim, so pitch reverts to mechanical back up and roll reverts to direct
+law. For the approach fly a long final, initiating the descent from at least
+5000ft \ac{AAL}. Do not try to flare using trim and do not remove power until
+after touchdown. From 1000ft \ac{AAL}, try to keep power changes to within 2\%
+N1. In the event of a go-around, power \emph{must} be applied very slowly if
+control is not to be lost.\footnote{This is Boeing advice -- Airbus does not
+provide guidance for the flare or go-around technique when elevators are
+frozen.}
+
+\multicite{\uline{F/CTL}~L(R)(L+R)~ELEV~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Stabilizer jam}
+
+Manual pitch trim is a mechanical connection to the stabilizer actuator. It may
+be possible to use manual pitch trim when the \ac{ELAC}s have detected a
+stabilizer jam, although it may be heavier than normal. If it is usable, trim
+for neutral elevators.
+
+The flight controls will revert to Alternate Law. If the stabilizer could not be
+moved, gear extension should be delayed until \ac{CONF} 3 and \V{APP} are
+achieved so that the elevators are properly trimmed.
+
+If the jam is caused by the mechanical connection, it is possible that the \ac{ELAC}s will not
+detect the problem. The procedure in this case is similar, but Normal Law will remain.
+
+\multicite{\uline{F/CTL}~STABILIZER~JAM,
+QRH~AEP.F/CTL, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Aileron faults}
+
+The lateral aircraft handling is not adversely affected even if both ailerons
+fail, as the systems compensate by using the spoilers. Fuel consumption will,
+however, increase by approximately 6\%.
+
+\multicite{\uline{F/CTL}~L(R)~AIL~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Spoiler faults}
+
+The effect of a spoiler fault depends on whether the spoiler fails retracted or
+extended.
+
+If the spoiler fails in the retracted position, handling should not be adversely
+affected. A \ac{CONF} 3 landing may reduce any buffeting that is
+encountered. Speed brake should not be used if spoilers 3 and 4 are
+affected. The loss of ground spoilers will significantly increase landing
+distances.
+
+Airbus have identified a failure scenario that leads to high pressure hydraulic
+fluid reaching the extend chamber of a spoiler actuator via a failed
+o-ring. This has the effect of a spoiler failing in the fully extended
+position. In this case, the autopilot does not necessarily have sufficient
+authority to control the aircraft, and it should be disconnected. Fuel burn will
+increase significantly; \ac{FMGC} fuel predictions do not account for the
+failure and should be disregarded. Green dot speed will minimize this increased
+fuel burn, but may not be viable if there is excessive buffet -- attempt to find
+a compromise speed. Landing will be \ac{conf} 3; \V{APP} and \cphrase{LDG DIST}
+factors are available in the \ac{QRH}.
+
+\multicite{\uline{F/CTL}~(GND)~SPLR~(1+2)(3+4)~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Rudder Jam}
+
+The main indication of jammed rudder is undue and adverse pedal movement during
+rolling manoeuvres caused by the yaw damper orders being fed back to the pedals
+when they are no longer sent to the rudder.
+
+Crosswinds from the side that the rudder is deflected should be avoided, and a
+cross wind limit of 15kt applies. Control on the ground will require
+differential braking until the steering handle can be used (below 70kt), so
+landing distances are increased. Do not use autobrake.
+
+\multicite{\uline{F/CTL}~RUDDER~JAM, QRH AEP.F/CTL, FCOM~PRO.AEP.F/CTL}
 
 
 \end{document}
