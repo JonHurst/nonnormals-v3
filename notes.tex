@@ -43,6 +43,7 @@
 \label{sec-all-engine-failure}
 \label{sec-gravity-fuel-feeding}
 \label{sec-nose-wheel-steering}
+\label{sec-smoke-removal}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -1912,5 +1913,109 @@ sidestick, and the autopilot can then be re-engaged. The autopilot should not be
 disconnected in the normal manner as pressing \emph{either} takeover button will
 re-introduce the failed sidestick and the uncommanded input; use the FCU
 instead.
+
+
+\chapter{Fire}
+
+\section{Smoke and fumes}
+
+The presence of smoke and fumes may or may not generate \ac{ECAM} warnings. If a
+smoke related \ac{ECAM} warning occurs, run the \ac{ECAM} before turning to the
+\ac{QRH}.\footnote{For the \cphrase{avionics smoke} \ac{ecam}, the \ac{FCTM}
+gives you the option of skipping the \ac{ECAM} and referring directly to the
+\ac{QRH}, since the \ac{QRH} contains all of the relevant actions. However,
+treating this \ac{ecam} as ``special'' just complicates matters, since you will
+then have to remember which one was ``special''.}
+
+The \cphrase{smoke/fumes/avncs smoke} \ac{QRH} procedure should be applied
+when:
+
+\begin{itemize}
+\item Smoke is detected and the crew suspect the avionics, air conditioning or
+  cabin equipment as the source.
+\item An \cphrase{Avionics Smoke} \ac{ECAM} requests it.
+\item Orange peel or pine needle smells are detected in the flight deck. These
+  are due to rain repellent leaks; the former is toxic, the latter non-toxic.
+  \end{itemize}
+
+While the smoke aspect of these procedures is fairly unambiguous, the fumes
+aspect has led to both under- and over-reaction in the simulator. Training
+department guidance is that if a ``smell'' is detected in the cabin and it is
+having \emph{no physiological effects}, no immediate action is required. If
+there \emph{are} physiological effects, the \cphrase{SMOKE/FUMES/AVNCS SMOKE}
+\ac{QRH} procedure should be actioned. However, only the first line,
+\cphrase{LAND ASAP}, is actioned since there is no perceptible \emph{smoke} and
+the rest of the checklist is below the line ``if perceptible smoke apply
+immediately''. Thus after cross-confirming \cphrase{LAND ASAP}, immediately move
+on to the \cphrase{REMOVAL OF SMOKE/FUMES} \ac{QRH} checklist.\footnote{It
+should be noted that confirmation of the correctness of this advice is currently
+being sought from Airbus, and that in a number of in-service events the source
+of the smell has been positively identified as one of the packs.}
+
+
+The \ac{QRH} \cphrase{SMOKE/FUMES/AVNCS SMOKE} checklist attempts to isolate the
+source of the smoke. It is possible that it may become impossible to carry out
+this checklist due to smoke density. In this case, interrupt the checklist and
+carry out the smoke removal drill (see Section \ref{sec-smoke-removal}). It is
+also possible that the situation may deteriorate to a level that an immediate
+forced landing becomes the preferable option. In general, unless the source of
+the smoke is obvious and extinguishable, a diversion should be initiated
+immediately. The smoke removal drill is most effective and adaptable at lower
+levels, so a descent to 10,000ft or \ac{MSA} is also a priority.
+
+The first priority is to protect yourself, so get an oxygen mask on. The mask
+must be set to 100\% oxygen to exclude fumes; at minimum dispatch oxygen levels
+this will provide as little as 15 minutes of protection. Pushing the ``Emergency
+pressure selector'' knob will provide a few seconds of overpressure, which can
+be used to clear any smoke trapped in the mask as it was donned.
+
+Likely sources of smoke are the avionics, the cabin fans and the galleys. Smoke
+from these sources can be contained with simple and reversible actions which can
+be initiated immediately: put the avionics ventilation into smoke removal mode
+by selecting both blower and extract fans to \ac{OVRD}, turn off the cabin fans
+and turn off the galleys.
+
+Where the source is immediately obvious, accessible and extinguishable, isolate
+the faulty equipment. Otherwise the \ac{QRH} provides separate drills for
+suspected air conditioning smoke, suspected cabin equipment smoke or suspected
+avionics/electrical smoke. In addition the avionics/electrical smoke drill
+includes undetermined and continuing smoke sources.
+
+Suspect air conditioning smoke if it initially comes out of the ventilation
+outlets. Several \ac{ECAM} warnings are also likely to occur as sensors detect
+the smoke in other areas. The displayed \ac{ECAM} procedures must be
+applied. Following an engine or \ac{APU} failure, smoke may initially enter the
+air conditioning system but should dissipate quickly once the failure is
+contained. The air conditioning drill starts by turning the \ac{APU} bleed off
+in case this is the source. The packs are then turned off one at a time to
+determine if the source of the smoke is a pack.
+
+The cabin equipment smoke drill involves selecting the commercial button off and searching
+for faulty cabin equipment.
+
+Suspect avionics smoke if the only triggered \ac{ECAM} is \cphrase{AVIONICS
+  SMOKE}. If an item of electrical equipment fails immediately prior to the
+appearance of the smoke, that equipment should be suspected as the source. The
+avionics/electrical drill (which includes the undetermined source drill) reduces
+the amount of electrically powered equipment to a minimum by adopting a slightly
+modified emergency electrical configuration.\footnote{The \cphrase{EMER ELEC GEN
+  1 LINE} button rather than the \ac{GEN} 1 button is used to disconnect
+generator 1 which disconnects generator 1 from the electrical system but allows
+it to directly supply one fuel pump in each wing tank.} The resulting \ac{ECAM}
+\emph{may}\footnote{Which \ac{ECAM} procedure is displayed is dependent on
+whether an \cphrase{AVIONICS SMOKE ECAM} has been triggered prior to the
+adoption of emergency electrical configuration.} contain instructions to reset
+the generators; these instructions should be disregarded, although the rest of
+the \ac{ECAM} procedure must be actioned. The intention is to restore power 3
+minutes before landing or at 2000ft aal. Since you will not be able to restore
+the two \ac{IR}s that were depowered, the landing will be in Direct Law and
+hence \ac{CONF} 3.\footnote{\ac{QRH} \ecam{ELEC}{ELEC EMER CONFIG Sys Remaining}
+indicates that by selecting the \cphrase{ATT~HDG} selector to \cphrase{CAPT~3} it
+may be possible to retain \ac{IR}3 and hence have sufficient equipment for a Cat
+3 Single landing once power is restored. This has not yet been confirmed by
+Airbus.}  This is not mentioned in \ac{QRH}, and is only mentioned on the
+\ac{ECAM} once gear is extended.
+
+\multicite{\uline{AVIONICS}~SMOKE, QRH~AEP.SMOKE, FCOM~PRO.AEP.SMOKE}
 
 \end{document}
