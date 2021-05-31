@@ -43,7 +43,6 @@
 \label{sec-all-engine-failure}
 \label{sec-gravity-fuel-feeding}
 \label{sec-nose-wheel-steering}
-\label{sec-smoke-removal}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -2017,5 +2016,67 @@ Airbus.}  This is not mentioned in \ac{QRH}, and is only mentioned on the
 \ac{ECAM} once gear is extended.
 
 \multicite{\uline{AVIONICS}~SMOKE, QRH~AEP.SMOKE, FCOM~PRO.AEP.SMOKE}
+
+
+\section{Smoke/ fumes removal}
+\label{sec-smoke-removal}
+
+Smoke removal procedures initially use the pressurisation system to draw smoke
+and fumes overboard by increasing the cabin altitude. If there are no fuel
+vapours present, the packs are used to drive the smoke overboard. Otherwise it
+is driven overboard by residual pressure.
+
+The final target configuration is packs off, outflow valve fully open and ram
+air on. As this depressurises the aircraft, it can only be achieved at lower
+levels (preferably \ac{FL}100). If in emergency configuration, turning the
+\ac{APU} master switch on connects the batteries for a maximum of 3 minutes and
+allows manual control of the \ac{DC} powered outflow valve motor. Once at a
+suitable level and below 200kt, as a last resort \ac{PNF}'s cockpit window can
+be opened.
+
+\multicite{QRH~AEP.SMOKE, FCOM~PRO.AEP.SMOKE}
+
+
+\section{Engine fire}
+
+The basic sequence is to bring the thrust lever of the affected engine to idle,
+turn off its engine master, push its fire button, wait 10 seconds then deploy
+its first fire bottle. If the fire is not extinguished after 30 seconds,
+indicated by the fire button remaining lit, deploy the second bottle.
+
+This sequence is modified on the ground in that both fire bottles are fired
+immediately. Cross confirmation is not required for master switches or fire
+buttons when operated on the ground. The emergency evacuation procedure is then
+applied if required (see Section \ref{sec-evacuation}).
+
+\multicite{\uline{ENG}~1(2)~FIRE, FCOM~PRO.AEP.ENG}
+
+
+\section{Lithium Battery Fire}
+
+If there are flames, they should be attacked with a halon extinguisher. This
+will necessitate \ac{PF} donning a crew oxygen mask and \ac{PNF} donning the
+smoke hood.
+
+If there are no flames, or once the flames have been extinguished, the cabin
+crew should remove the device from the cockpit and store it in a lined container
+filled with water. If the device cannot be removed, water or non-alcoholic
+liquid should be poured on the device, and it should be continuously monitored
+for re-ignition.
+
+Note that these procedures assume that you are dealing with lithium ion
+batteries (i.e. rechargeable batteries found in laptops, tablets, phones etc.)
+where the amount of water reactive lithium metal is actually fairly low. Once
+the flames have been knocked down, the focus is on cooling to prevent thermal
+runaway in adjacent cells. Counter-intuitively, it is vital that ice is
+\emph{not} used as this acts as a thermal insulator and will likely cause
+adjacent cells to explode. For the same reason, smothering with anything that
+might thermally insulate the battery pack (e.g. a fire bag) is probably a bad
+idea.
+
+If smoke becomes the biggest threat, see Section \ref{sec-smoke-removal}. If the
+situation becomes unmanageable, consider an immediate landing.
+
+\multicite{QRH~AEP.SMOKE, FCOM~PRO.AEP.SMOKE, FAA videos (youtube)}
 
 \end{document}
