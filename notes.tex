@@ -42,9 +42,7 @@
 \label{sec-loss-of-braking}
 \label{sec-all-engine-failure}
 \label{sec-gravity-fuel-feeding}
-\label{sec-alternate-law}
 \label{sec-nose-wheel-steering}
-\label{sec-alternate-law}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -1527,6 +1525,7 @@ panel will not be detected.
 
 
 \section{Flaps and/or slats fault/locked}
+\label{sec-stuck-slats/flaps}
 
 The most pressing concern following a flap or slat problem is to select a safe
 initial speed that will avoid overspeeding the stuck device. To establish a
@@ -1617,6 +1616,58 @@ allowing the deployment of the flaps to recover the stall margin.
   FCOM~PRO.AEP.F/CTL}
 
 
+\section{Direct Law}
+\label{sec-direct-law}
+
+In Direct Law, deflection of the control surfaces is a linear function of
+deflection of the side-stick and trimming must be done manually. The controls
+are very sensitive at high speeds.
+
+Use of manual thrust is recommended as power changes will result in pitch
+changes. Similarly, use of the speed brake will result in nose up pitch changes
+so it should be used with care.
+
+Protections are unavailable, so speed is limited to 320kt/0.77M and great care
+must be taken when flying \ac{GPWS} or windshear manoeuvres.
+
+Direct Law landings are \ac{conf} 3; landing distances, in the absence of other
+pertinent failures, are comparable to normal \ac{conf} 3 landings.
+
+The major handling difficulty with Direct Law is the go-around. There is no
+compensation for the large pitch moment introduced by selecting \ac{TOGA} power
+on the under-slung engines, the thrust levers are non-linear, thrust onset is
+laggy and non-linear and the use of the manual pitch trim wheel will be
+unfamiliar. Apply power smoothly and progressively and anticipate a requirement
+for unusual side-stick inputs.
+
+Direct Law works with or without yaw dampers. The aircraft is \emph{always}
+convergent in dutch roll, so use lateral control, not rudder, if dutch roll is
+experienced.
+
+\multicite{\uline{F/CTL}~DIRECT~LAW, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Alternate Law}
+\label{sec-alternate-law}
+
+\looseness=1
+In alternate law, pitch is as in normal law, but roll is as in direct law. Load
+factor protection is retained, but other protections are either replaced with
+static stability or are lost, depending on the nature of the failure. Stall
+warnings and overspeed warnings become active.
+
+The main effects are that speed is limited to 320kt and stall warnings must be
+respected when carrying out \ac{EGPWS} manoeuvres.
+
+The autopilot may be available.
+
+Expect Direct Law after landing gear extension (see Section
+\ref{sec-direct-law}, and hence increased approach speeds and landing distances
+due to the associated \ac{CONF} 3 landing..
+
+\multicite{\uline{F/CTL}~ALTN~LAW, FCOM~PRO.AEP.F/CTL}
+
+
 \section{Elevator faults}
 
 If a single elevator fails, the \ac{SEC}s use the remaining elevator to provide
@@ -1701,5 +1752,152 @@ landing distances are increased. Do not use autobrake.
 
 \multicite{\uline{F/CTL}~RUDDER~JAM, QRH AEP.F/CTL, FCOM~PRO.AEP.F/CTL}
 
+
+\section{ELAC fault}
+\label{sec-elac}
+
+In normal operations, \ac{ELAC} 1 controls the ailerons and \ac{ELAC} 2 controls
+the elevators and stabiliser. Failure of a single \ac{ELAC} will result in
+failover to the remaining computer. Provided no uncommanded manoeuvres occurred,
+an attempt can be made to reset the failed \ac{ELAC}.
+
+Failure of both \ac{ELAC}s leads to loss of ailerons and hence Alternate
+Law. One of the \ac{SEC}s will take over control of the elevators and
+stabiliser. Again, an attempt can be made to reset the computers.
+
+If the fault is designated a pitch fault, only the pitch function of the
+associated \ac{ELAC} is lost.
+
+\multicite{\uline{F/CTL} ELAC~1(2)~FAULT,
+FCOM~PRO.AEP.F/CTL}
+
+
+\section{SEC fault}
+
+Each \ac{SEC} controls either 1 or 2 spoilers per wing. \ac{SEC}1 and \ac{SEC}2
+also provide back up for the \ac{ELAC}s (see Section \ref{sec-elac}). Loss of a
+\ac{SEC} leads to loss of its associated spoilers. \ac{SEC}1 provides spoiler
+position to the \ac{FAC}s. If speedbrakes are deployed with \ac{SEC}1 failed and
+\ac{SEC}3 operative, spoiler 2 will deploy without a corresponding increase in
+\V{LS}. Therefore, do not use speedbrake if \ac{SEC}1 is affected.
+
+Pairs of \ac{SEC}s also provide the signal for reverse thrust lever angle to the
+reversers and spoiler deployment to the autobrake. A dual \ac{SEC} failure will
+therefore lead to a loss of a reverser and loss of autobraking.
+
+If all \ac{SEC}s are lost, in addition to the above, the controls revert to
+Alternate Law. Due to the normal routing of data from the \ac{LGCIU}s to the
+\ac{ELAC}s being via the \ac{SEC}s, Direct Law will occur at selection of
+\ac{CONF} 2 rather than at gear extension.\footnote{The autopilot is available
+with loss of all \ac{SEC}s. If the autopilot is engaged when \ac{CONF}~2 is
+selected, Alternate Law will be retained; the reversion to Direct Law will occur
+at autopilot disconnection.}
+
+An attempt should be made to reset the affected \ac{SEC}(s).
+
+\multicite{\uline{F/CTL}~SEC~1(2)(3)~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{SFCC faults}
+
+Each \ac{SFCC} has fully independent slat and flap channels. A failure of a
+channel in a single controller will lead to slow operation of the associated
+surfaces, although this is barely discernible in practice. In addition, the flap
+channel of \ac{SFCC}1 provides input to the idle control part of the \ac{FADEC}s
+and to the \ac{EGPWS}.
+
+Failure of both flap channels or failure of both slat channels is covered in
+Section \ref{sec-stuck-slats/flaps}.
+
+\multicite{\uline{F/CTL}~FLAP(SLAT)~SYS~1(2)~FAULT,
+FCOM~PRO.AEP.F/CTL}
+
+
+\section{FCDC faults}
+
+The two \ac{FCDC}s are redundant, so a single failure has no immediate effect.
+
+If both \ac{FCDC}s fail, the \ac{ELAC}s and \ac{SEC}s can no longer supply data
+to the \ac{EIS}. The major effect of this is that \ac{F/CTL} \ac{ECAM} warnings
+are no longer generated. The warning lights on the overhead panel continue to
+give valid information and should be monitored.
+
+The aircraft remains in Normal Law with all protections, but protection
+indications (bank and pitch limits, \V{$\alpha$-prot} and \V{$\alpha$‑max}) are
+not shown and the stall warning system becomes active.
+
+\multicite{\uline{F/CTL}~FCDC~1(2)(1+2)~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Wingtip brake fault}
+
+The wingtip brakes activate in case of asymmetry, mechanism overspeed,
+symmetrical runaway or uncommanded movements. This protection is lost.
+
+\multicite{\uline{F/CTL}~FLAP(SLAT)~TIP~BRK~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Flap attach sensor failure}
+
+The flap attach sensor detects excessive differential movement between the inner
+and outer flaps which would indicate failure of a flap attachment. This
+protection is lost.
+
+\multicite{\uline{F/CTL}~FLAP~ATTACH~SENSOR, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Flight control servo faults}
+
+All flight controls have redundant servos. In the case of an elevator servo
+fault, a restriction to not use speedbrake above \V{MO}/M\textsubscript{MO}
+applies.
+
+\multicite{\uline{F/CTL}~AIL(ELEV)~SERVO~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Speed brake disagree}
+
+This indicates that the spoiler positions do not correspond with the speedbrake
+lever position. This may be as a result of automatic retraction ($\alpha$-floor
+activation or speed brakes deployed when \ac{conf} Full selected) or as a result
+of spoiler malfunction. In both cases retract the speedbrake lever and in the
+case of spoiler malfunction consider the speedbrakes unserviceable.
+
+\multicite{\uline{F/CTL}~SPD~BRK~DISAGREE, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Speed brake fault}
+
+This indicates a failure of the speedbrake lever transducers rather than a
+problem with the spoilers. Ground spoiler activation may be expected on
+selection of reverse, so providing reversers are used, landing distances should
+not be affected.
+
+\multicite{\uline{F/CTL}~SPD~BRK~(2)(3+4)~FAULT, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Stiff sidestick/ rudder pedals}
+
+This may affect both sidesticks at the same time, but not the rudder pedals or
+it may affect the rudder pedals and one sidestick. Control forces will remain
+moderate and the aircraft remains responsive. Confirm autopilot disengagement
+and consider transferring control if one of the sidesticks is unaffected.
+
+\multicite{QRH~AEP.F/CTL, FCOM~PRO.AEP.F/CTL}
+
+
+\section{Unannunciated sidestick faults}
+
+It is possible for a failed sidestick transducer to cause uncommanded control
+inputs. If no fault is detected, the result is that the aircraft behaves as if
+that input had actually been made. The autopilot will disconnect and any attempt
+to control the aircraft with the failed sidestick will fail.
+
+The aircraft should be recovered with the other sidestick using the takeover
+button. Keeping this button pressed for 40 seconds will lock out the failed
+sidestick, and the autopilot can then be re-engaged. The autopilot should not be
+disconnected in the normal manner as pressing the takeover button will
+re-introduce the failed sidestick and the uncommanded input; use the FCU
+instead.
 
 \end{document}
