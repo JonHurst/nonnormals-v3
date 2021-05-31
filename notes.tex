@@ -2079,4 +2079,173 @@ situation becomes unmanageable, consider an immediate landing.
 
 \multicite{QRH~AEP.SMOKE, FCOM~PRO.AEP.SMOKE, FAA videos (youtube)}
 
+
+\chapter{Fuel}
+
+\section{Fuel system differences}
+
+The easyJet Airbus fleet has evolved to include a number of variations of the
+fuel system. The two major variations, from the point of view of non-normals,
+are the replacement of electrical center tank pumps with jet transfer pumps on
+some airframes and the simplified tank system of the A321 \ac{NEO} where the
+normal outer and inner cells are replaced with a single wing tank. In addition,
+some airframes are fitted with a center tank fuel inerting system, but since
+there are no cockpit controls for this, it doesn't affect the non-normal
+procedures.
+
+The philosophy of center tank jet transfer pumps is very different from that of
+the electrical pumps. With the electric pumps, fuel is supplied directly from
+the center tank to the engines, and any transfer between center tank and wing
+tank is a side effect of the fuel return system. With the jet transfer pumps,
+fuel is only ever transferred from the center tank to wing tanks: it is always
+the wing tank pumps that supply pressurised fuel to the engines. The jet
+transfer pumps themselves are also powered by the wing tank pumps: if there is a
+need to shut down a jet transfer pump, that is achieved by turning off the
+associated wing pumps. There also appears to be some scope for gravity feeding
+from the center tank when jet pumps are fitted (although 2T of center tank fuel
+will still be unusable),\footnote{This information only appears in the
+\ecam{FUEL}{CTR L+R XFR FAULT} checklist. I have requested further information
+and will update once I get a response.} something that is not possible with the
+electrical pumps. This leads to some subtle airframe dependent differences in
+non-normal fuel procedures.
+
+The simplification of the wing tanks on the A321 \ac{NEO} has less impact on non-normal
+procedures: it is mainly a case of changing \ac{ECAM} titles appropriately.
+
+
+\section{Fuel leak}
+
+Whenever a non-normal fuel event occurs, the possibility that the underlying
+cause of the event is a fuel leak should be considered. Only when a fuel leak
+has been categorically ruled out should the cross-feed valve be opened.
+
+The primary method used to detect fuel leaks is a regular check that actual fuel
+remaining corresponds to expected fuel remaining and that fuel used plus fuel
+remaining corresponds to fuel at engine start. The latter parameter is monitored
+on some aircraft and may trigger an \ac{ECAM} warning. Other indications of a
+leak include fuel imbalance or excessive fuel flow from an engine. It is also
+possible that a fuel leak may be detected visually or by a smell of fuel in the
+cabin.
+
+If a leak can be confirmed to be coming from an engine or pylon, either visually
+or as indicated by excessive fuel flow, the affected engine must be shut
+down. In this case, cross-feeding is allowable. Otherwise, the cross-feed must
+be kept closed.
+
+If the leak cannot be confirmed to be originating from an engine or pylon, an
+attempt should be made to identify the source of the leak by monitoring the
+inner tank (or, for A321 \ac{NEO}, wing tank) depletion rates with the crossfeed
+valve closed and the center tank pumps off.
+
+If depletion rates are similar, a leak from the center tank or from the \ac{APU}
+feeding line should be suspected. If there is a smell of fuel in the cabin, it
+is likely that the \ac{APU} feeding line is at fault and the \ac{APU} should be
+turned off. Fuel from the center tank should be used once one of the inner/wing
+tanks has <3000kg.\footnote{The logic here is strange. An unofficial explanation
+of the requirement for <3000kg in the inner tank was given to me: some of the
+fuel lines from the center tank run through the wing tanks, so fuel from a
+center tank leak may end up transferring to the wing tanks and with full wing
+tanks might be lost overboard by venting the wing tank overflow. As for the
+\ac{APU} feeding line leak, I would expect the left tank to decrease faster than
+the right in this case; my guess is that the expectation is that an \ac{APU}
+feeding line leak will be detected as a smell in the cabin and the leak will be
+too small to become apparent as an imbalance.}
+
+If, after 30 minutes, one tank has been depleted by 300kg more than the other,
+the location of leak is narrowed down to the engine or the wing on the more
+depleted side. To confirm which it is, shut down the engine.  If the leak then
+stops, an engine leak is confirmed and the cross feed can be used. If not, a
+leak from the wing is most likely. In this case, an engine restart should be
+considered.
+
+The handling of the center tank pumps in the presence of a fuel leak is
+dependent on whether the aircraft is fitted with electrical center tank pumps or
+with jet transfer pumps. When electrical center tank pumps are on, no fuel is
+transferred between the center tank and the wing tank unless the engine
+associated with that wing tank is running. If an engine \emph{is} running with
+electrical center tank pumps on, surplus fuel is returned from the engine to the
+associated wing tank, and thus a fairly modest rate of transfer occurs. The jet
+transfer pumps, on the other hand, transfer fuel directly from center tank to
+wing tank at a high rate regardless of whether the associated engine is
+running. It is therefore important not to run a jet transfer pump if you suspect
+its associated wing tank has a leak since significant extra fuel loss would
+likely occur.
+
+In an emergency, a landing may be carried out with maximum fuel imbalance.
+
+Do not use thrust reversers.
+
+\multicite{\uline{FUEL}~F~USED/FOB~DISAGREE, QRH~AEP.FUEL, FCOM~PRO.AEP.FUEL}
+
+
+\section{Fuel imbalance}
+
+All fuel balancing must be carried out in accordance with \ac{QRH}
+\ecam{FUEL}{Fuel Imbalance}, paying particular attention to the possibility of a
+fuel leak. Any action should be delayed until sufficient time has passed for a
+fuel leak to become apparent. The \ac{FCOM} adds a note not found in the
+\ac{QRH} that ``there is no requirement to correct an imbalance until the
+\ac{ECAM} fuel advisory limit is displayed'', an event that occurs when one
+inner tank holds >1500kg more than the other. The limitations for fuel imbalance
+in \ac{FCOM}~\cphrase{LIM.FUEL}, however, show that the fuel advisory does not
+necessarily indicate that a limitation is likely to be breached. In particular,
+when the outer tanks are balanced and the heavier inner tank contains
+$\leq$2250kg, there are no imbalance limitations. Furthermore, the aircraft
+handling is not significantly impaired even at maximum imbalance.
+
+To balance the fuel, open the cross-feed valve and turn the lighter side pumps
+and the center tank pumps off.
+
+\multicite{QRH~AEP.FUEL, FCOM~PRO.AEP.FUEL, FCOM~LIM.FUEL}
+
+
+\section{Gravity fuel feeding}
+\label{sec-gravity-fuel}
+
+Turn on ignition and avoid negative G. The ceiling at which fuel can be reliably
+gravity fed depends on whether the fuel has had time to deaerate, this being a
+function of achieved altitude and time at that altitude. The algorithm used to
+calculate gravity feed ceiling is airframe dependent and is provided in the
+\ac{QRH}. Once calculated, descend to the gravity feed ceiling; it may be as low
+as \ac{FL}150, so terrain must be considered.
+
+It is also possible to gravity cross feed by side slipping the aircraft with the
+cross feed valve open. The section of the \ac{QRH} describing this procedure has
+recently (June 2017) been cleaned up by moving an explanatory note into a branch
+title, but this has had the effect of changing the apparent
+intention. Previously, gravity cross feeding was indicated when single engine
+and required ``for aircraft handling'' (i.e. it could generally be disregarded),
+whereas with the update the procedure is indicated whenever gravity feeding on a
+single engine. Clarification has been requested from Airbus via the easyJet
+Technical Manager, and these notes will be updated once a response is received.
+
+\multicite{QRH~AEP.FUEL, FCOM~PRO.AEP.FUEL}
+
+
+\section{Wing tank pump(s) low pressure}
+
+Failed pumps should be turned off.
+
+Failure of a single pump in either tank results in reduced redundancy only.
+
+Failure of both pumps in a given tank means that the fuel in that tank is only
+available by gravity feeding. Pressurized fuel may be available from the center
+tank (use manual mode if necessary) or by cross-feeding. A descent to gravity
+feed ceiling may be required (see Section \ref{sec-gravity-fuel}).
+
+\multicite{\uline{FUEL}~L(R)~TK~PUMP~1(2)(1+2)~LO~PR, FCOM~PRO.AEP.FUEL}
+
+
+\section{Center tank pumps low pressure}
+
+Failed pumps should be turned off.
+
+Failure of a single center tank pump results in a loss of redundancy. The
+crossfeed should be opened until the center tank fuel has been exhausted so that
+the remaining pump can supply both engines.
+
+Failure of both center tank pumps makes the fuel in the center tank unusable.
+
+\multicite{\uline{FUEL}~CTR~TK~PUMP(S)(1(2))~LO~PR, FCOM~PRO.AEP.FUEL}
+
 \end{document}
