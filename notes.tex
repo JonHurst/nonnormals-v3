@@ -2340,21 +2340,23 @@ that less than minimum fuel will remain after landing, declare a Mayday.
 \multicite{\uline{FUEL}(R)(L+R)~WING~TK~LO~LVL, FCOM~PRO.AEP.FUEL, EOMA~8.3.8.2}
 
 
-\section{Outer tank transfer valves failed closed}
+\section{Outer tank transfer valve faults}
 
-If both transfer valves fail to open when a wing tank reaches low level, the
-fuel in that outer tank becomes unusable. The fuel balance will remain within
-limits since maximum outer tank imbalances are acceptable if the total fuel in
-either wing is the same (see \ac{FCOM}~\cphrase{LIM.FUEL}).
+Imbalances caused by the outer tank transfer valves on one side failing to
+sequence correctly, either by failing to open or by opening out of sequence,
+will not exceed limits, provided that the total fuel in each wing is the same
+(see \ac{FCOM}~\cphrase{LIM.FUEL}).
 
-\multicite{\uline{FUEL}~L(R)~XFR~VALVE~CLOSED, FCOM~PRO.AEP.FUEL}
+Of more concern is the sudden loss of usable fuel when transfer valves fail to
+open on schedule. If only one side is affected, 700kg of fuel will become
+unusable. If both sides are affected, 1400kg of fuel will become unusable. This
+will happen when fuel levels are already fairly low, as the valves are triggered
+when an inner tank reaches 750kg, potentially leaving you with just 1500kg of
+fuel when you were expecting to have 2900kg.
 
-\section{Outer tank transfer valve open out of sequence}
-
-Maximum outer tank imbalances are acceptable if the total fuel in either wing is
-the same (see \ac{FCOM}~\cphrase{LIM.FUEL}], so no action is required.
-
-\multicite{\uline{FUEL}~L(R)~XFR~VALVE~OPEN, FCOM~PRO.AEP.FUEL}
+\multicite{\uline{FUEL}~L(R)~XFR~VALVE~OPEN,
+  \uline{FUEL}~L(R)~XFR~VALVE~CLOSED,\\
+  FCOM~PRO.AEP.FUEL}
 
 
 \section{Cross-feed valve fault}
