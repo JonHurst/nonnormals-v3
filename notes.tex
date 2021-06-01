@@ -40,8 +40,6 @@
 %%%%%%%%%%%%%%%%
 %labels to be moved once section is processed
 \label{sec-dualhyd-gy}
-\label{sec-pos-disagree}
-\label{sec-att-mode}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -3424,9 +3422,9 @@ If \ac{AP}/\ac{FD} \ac{TCAS} mode is not installed or not available, the first
 response to either advisory is to call ``\ac{TCAS}, I have control'' to
 unequivocally establish who will be carrying out any manoeuvres. If it is a
 resolution advisory, the autopilot should be disconnected and \emph{both} flight
-directors turned off\footnote{If one \ac{FD} is left engaged, the autothrust
+directors turned off.\footnote{If one \ac{FD} is left engaged, the autothrust
 will not revert to speed mode, possibly resulting in speed decay and engagement
-of normal law protections.}. The autothrust remains engaged and reverts to speed
+of normal law protections.} The autothrust remains engaged and reverts to speed
 mode. A vertical manoeuvre should then be flown to keep the \ac{V/S} needle out
 of the red areas shown on the \ac{V/S} scale. \ac{ATC} should then be notified
 (e.g ``Radar, Easy 123 -- \cphrase{TCAS RA}''). When clear of conflict, return
@@ -3538,7 +3536,7 @@ request meaningless air data and \ac{ATC} switching. Instead revert to standby
 instruments (the standby \ac{ASI} and Altimeter have direct pressure feeds from
 the the standby pitot and static ports) and refer to \ac{QRH} \ecam{NAV}{ADR
   1+2+3 FAULT}. Interestingly, when Backup Speed Scale is available, the
-\ac{ECAM} advises that the standby instrument indications may be unreliable…
+\ac{ECAM} advises that the standby instrument indications may be unreliable\ldots
 
 Triple \ac{ADR} failure has a few additional ramifications. Of note is loss of
 automatic cabin pressure control (see Section \ref{sec-pressure-controller} for
@@ -3556,10 +3554,11 @@ extension and loss of auto flap retraction.
 
 The \ac{ECAM} message indicates that, following an \ac{ADR} fault or rejection,
 there is a speed or angle of attack disagreement between the two remaining
-\ac{ADR}s. This will cause a degradation to alternate law. If there is a speed
-disagreement, see Section \ref{sec-unreliable-airspeed}. If the speed does not
-disagree, an \ac{AOA} sensor is providing incorrect data and there is a risk of
-spurious stall warnings.
+\ac{ADR}s. This will cause a degradation to Alternate Law. If there is a speed
+disagreement, apply the Unreliable Speed procedure (see Section
+\ref{sec-unreliable-airspeed}). If the speed does not disagree, an \ac{AOA}
+sensor is providing incorrect data and there is a risk of spurious stall
+warnings.
 
 \multicite{\uline{NAV}~ADR~DISAGREE, FCOM~PRO.AEP.NAV}
 
@@ -3593,6 +3592,7 @@ standby horizon to cross-check) and resetting the \ac{ELAC}s.
 
 
 \section{IR alignment in ATT mode}
+\label{sec-att-mode}
 
 If \ac{IR} alignment is lost, it may be possible to recover attitude and heading
 information by switching the \ac{ADIRU} selector to \ac{ATT} and maintaining
@@ -3603,7 +3603,7 @@ entered, the exact method being dependent on the \ac{ADIRS} \ac{CDU} fitted.
 
 
 \section{FM/GPS position disagree}
-
+\label{sec-pos-disagree}
 This can be disregarded if on an \ac{ILS} or \ac{LOC} approach. On an overlay
 approach, revert to raw data. On an \ac{RNAV} approach, go around unless visual.
 
