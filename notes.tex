@@ -39,8 +39,8 @@
 \chapter{links to be moved}
 %%%%%%%%%%%%%%%%
 %labels to be moved once section is processed
-\label{sec-all-engine-failure}
 \label{sec-dualhyd-gy}
+\label{sec-reverser-unlocked}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -2796,6 +2796,7 @@ Maintenance is required if:
 \chapter{Power plant}
 
 \section{All engine failure}
+\label{sec-all-engine-failure}
 
 The entire easyJet fleet has, thankfully, now been upgraded such that the
 various \ecam{ENG}{DUAL FAILURE} checklists are no longer applicable. Where
@@ -2912,5 +2913,230 @@ disregard slat limiting speeds. It is better to land fast then long.
 
 \multicite{\uline{ENG}~DUAL~FAILURE, QRH~AEP.ENG, FCOM~PRO.AEP.ENG,
   FCTM~PRO.AEP.ENG}
+
+
+\section{Single Engine failure}
+
+Defined as a rapid decrease in \ac{EGT}, \ac{N}2 and \ac{FF}, followed by a
+decrease in \ac{N}1. The crew must determine whether the engine has been damaged
+or whether a simple flame-out has occurred. Indications of damage are loud
+noises, significantly increased vibration or buffeting, repeated or
+uncontrollable engine stalls or abnormal post-failure indications
+(e.g. hydraulic fluid loss, zero \ac{N}1 or \ac{N}2 etc.).
+
+Firstly, the ignitors are turned on to protect the remaining engine and to
+confirm an immediate relight attempt. The thrust lever of the failed engine is
+then moved to idle (\ac{PF} moves the lever after confirmation from
+\ac{PNF}). If the \ac{FADEC} hasn't relit the failed engine within 30 seconds of
+the failure, it is shut down with the master switch. If damage is believed to
+have occurred, the associated fire button is pushed and, after 10 seconds, agent
+1 discharged.
+
+If it is believed that the engine is undamaged, a relight can be considered. The
+relight procedure is fairly long and highly unlikely to be successful; do not
+delay diversion and landing by attempting a relight. Also note that a relight
+attempt will erase \ac{FADEC} troubleshooting data.
+
+If there is vibration and/or buffeting, attempt to find an airspeed and altitude
+combination that minimizes the symptoms.
+
+Refer to Section \ref{sec-single-eng-ops} if unable to relight the engine.
+
+\multicite{\uline{ENG 1(2)} FAIL,
+FCOM~PRO.AEP.ENG}
+
+
+\section{Single engine operation}
+\label{sec-single-eng-ops}
+
+The most pressing issue is that a single engine bleed cannot support wing
+anti-ice and two packs. With the crossbleed valve selector in the normal
+\ac{AUTO} position, the crossbleed valve is effectively synchronised to the
+\ac{APU} bleed valve\footnote{The exception is that the crossbleed won't open if
+a bleed air duct leak is detected except during engine start.} and thus will
+most probably be closed; wing anti-ice, if it is in use, will be operating
+asymmetrically. If a fire button has been pushed, its associated side of the
+pneumatic system will be locked out and thus the only option is to turn the wing
+anti-ice off. \inlcite{PRO.NOR.SUP.AW} \cphrase{Minimum Speed with Ice
+  Accretion} provides mitigation of icing in the event of inoperative wing
+anti-ice. If both sides of the cross bleed system are available, the cross bleed
+valve can be manually opened at a cost of 1200ft to the single engine gross
+ceiling. With the cross bleed valve open, wing anti-ice is available, but one of
+the packs must be turned off\footnote{It will need to be pack 1 in Emergency
+Electrical config; otherwise it will generally be the pack on the dead engine
+side.} whenever it is used.
+
+The remaining engine must be safeguarded. To this end, continuous ignition
+should be selected.
+
+A fuel imbalance may develop. Fuel imbalance limitations are detailed in
+\ac{FCOM} \cphrase{LIM.FUEL}.  If the outer tanks are balanced, once the fuller
+inner tank contains less than 2250kg, fuel balance will never be limiting. Since
+this first occurs with approximately 5900kg of fuel remaining, fuel balancing
+due to balance limitations will generally not be required. Fuel may, however,
+still need to be crossfed to prevent fuel starvation of the remaining
+engine. Balance this concern against feeding your live engine the same fuel that
+was feeding your failed engine when it stopped working.
+
+\ac{TCAS} should be selected to \ac{TA} to avoid unflyable climb \ac{RA}s.
+
+If a reverser is unlocked with associated buffet, speed should be limited to
+240kt. See Section \ref{sec-reverser-unlocked} for more details of this
+scenario.
+
+If the remaining engine is operated at maximum power with the aircraft at low
+speed (e.g. responding to windshear) it is possible that directional control may
+be lost before the flight computer protections apply. Be cautious about reducing
+speed below \V{LS} on one engine.
+
+The main systems lost are the generator, bleed and hydraulic pump associated
+with the engine. Other systems may be lost depending on the reason for the
+shutdown. The \ac{APU} can be used to replace the lost generator and, providing
+the left side of the pneumatic system is available and isolated (i.e. cross
+bleed valve closed), provide pressurisation through pack 1, thus giving
+additional margin for the go-around. The \ac{BMC}s automatically close the
+engine bleeds when the \ac{APU} bleed valve is opened, so it is not necessary to
+manually turn them off to achieve this additional go-around margin. Note,
+however, that the \ac{APU} cannot support wing anti-ice.
+
+Approach and landing will be fairly normal. The main provisos are:
+
+\begin{itemize}
+\item Full flap should only be selected once descending on the glidepath; if a level
+off is required, the landing should be \ac{CONF}3 [\ac{QRH} \ecam{ENG}{OEI -- Straight in
+approach}]
+\item Only Cat 3 Single is available due to the loss of the ability to split the
+  electrical system.[\ac{QRH}~\ac{OPS}]
+\item On A319s, the autopilot cannot fly \cphrase{FINAL APP}, \cphrase{NAV/VS}
+  or \cphrase{NAV/FPA} approaches. All modes are available for manual flight
+  with flight directors. [\ac{FCOM}~\cphrase{LIM.AFS.GEN}]
+\item If flying manually, consider using manual thrust to better anticipate the
+  rudder inputs required by thrust changes. Also consider setting rudder trim to
+  zero at a late stage of the approach.[\ac{FCTM}~\cphrase{PRO.AEP.ENG}]
+\end{itemize}
+
+\multicite{\uline{ENG}~1(2)~SHUT~DOWN, FCOM~PRO.AEP.ENG}
+
+
+\section{Engine relight in flight}
+
+A graph showing the in flight relight envelope is provided in section
+\cphrase{AEP.ENG} of the \ac{QRH}. The ceiling is 27000 ft. Automatic start is
+recommended, but crew action is required in case of abnormal start.
+
+To prepare for the start, ensure the affected engine master switch is turned off
+and the affected thrust lever is at idle. Select ignition on the engine mode
+selector and open the cross bleed. If it is anticipated starter assist may be
+required, ensure wing anti ice is selected off.
+
+To begin the start sequence, select the affected master switch on. The
+\ac{FADEC} will determine whether starter assist is required and will open the
+start valve as needed. Both ignitors are energised as soon as the master switch
+is turned on, and the \ac{HP} fuel valve opens at 15\% \ac{N}2. Closure of the
+start valve and de-energisation of the ignitors occurs at 50\% \ac{N}2 as
+normal. Light off must occur within 30 seconds of fuel flow initiation. If
+uncertain about successful relight, move the thrust lever to check for engine
+response. The \ecam{ENG}{START FAULT} and \ecam{ENG}{STALL} \ac{ECAM}s may be
+disregarded if all other parameters are normal.
+
+\multicite{QRH~AEP.ENG, FCOM~PRO.AEP.ENG}
+
+
+\section{Engine stall}
+
+A stall is indicated by abnormal engine noise, flame from the engine exhaust
+(and possibly inlet in extreme cases), fluctuating performance parameters,
+sluggish thrust lever response, high \ac{EGT} and/ or rapid \ac{EGT} rise when
+the thrust lever is advanced.
+
+A variety of \ac{FADEC}s are fitted within the easyJet fleet. The earlier
+\ac{FADEC}s do not trigger an \ac{ECAM} warning if \ac{N}2 is above idle,
+whereas the later \ac{FADEC}s are more capable. The \ac{FCTM} warns that all
+\ac{FADEC}s may fail to detect engine stalls in some cases. Crew must therefore
+be ready to diagnose engine stalls on the basis of the above symptoms and apply
+the \ac{QRH} procedures where necessary.
+
+If an engine stall occurs on the ground, shut the engine down.
+
+When an engine stall occurs in flight, the response is airframe specific. For
+the earlier \ac{FADEC}s, if an \ac{ECAM} is triggered, the engine is simply shut
+down.  In all other cases (no \ac{ECAM} triggered on earlier \ac{FADEC}s; later
+\ac{FADEC}s) an attempt is made to contain the stall without shutting down the
+engine. The affected thrust lever is retarded to idle and the engine parameters
+checked. If the engine parameters remain abnormal, the engine is shut down. If,
+however, the parameters return to normal, stall margin is increased by turning
+on anti-icing\footnote{The new \ac{QRH} procedure for the \ac{NEO} requires wing
+anti-ice be turned on whereas that for the \ac{CEO} requires engine anti-ice be
+turned on, but both then go on to mention that stall margin is increased by
+turning on both, albeit at a cost of increased \ac{EGT}. The old \ac{QRH}
+procedure did turn on all relevant anti-icing. I have requested more information
+and will update this section when I get a response.} and the thrust levers are
+slowly advanced. If the stall recurs, the engine can be operated at low thrust
+settings, otherwise it can be operated normally.
+
+\multicite{\uline{ENG~1(2)}~STALL, QRH~AEP.ENG, FCOM~PRO.AEP.ENG}
+
+
+\section{Engine tailpipe fire}
+
+An internal engine fire may be encountered during engine start or shutdown. It
+will either be seen by ground crew or may be indicated by \ac{EGT} failing to
+decrease after the master switch is selected off.
+
+Start by getting the engine to a known state by ensuring the man start button is
+selected off and the affected engine master is selected off.
+
+The concept is to blow the fire out by dry cranking the engine. It is therefore
+essential that the fire button is \emph{not} pressed, as this will remove
+external power from the \ac{FADEC} and prevent dry cranking. Firstly, a source
+of bleed air must be available to power the starter. Possibilities, in order of
+preference, are the \ac{APU}, the opposite engine or a ground air cart. If using
+the opposite engine, the source engine bleed must be on, the target engine bleed
+should be off, the cross bleed should be opened and thrust increased to provide
+30 psi of pressure.
+%<!-- {\ac{TODO}: This is just the crossbleed start procedure
+% from \ac{QRH}~\ac{SI}.150 -- --> <!-- check that there are no differences} -->
+If using ground air, both engine bleeds should be off and the cross bleed
+opened. Once high pressure air is available, select the engine mode selector to
+crank and select the man start button to on. Once the fire is extinguished,
+select the man start button off and the engine mode selector to normal.
+
+As a last resort, external fire suppression agents may be used. They are,
+however, highly corrosive and the engine will be a write off.
+
+\multicite{QRH~AEP.ENG, FCOM~PRO.AEP.ENG}
+
+
+\section{High engine vibration}
+
+The \ac{ECAM} \ac{VIB} advisory (\ac{N}1$\geq$6 units, \ac{N}2$\geq$4.3 units)
+is simply an indication that engine parameters should be monitored more
+closely. High \ac{VIB} indications alone do not require the engine to be shut
+down.
+
+High engine vibration combined with burning smells may be due to contact of
+compressor blade tips with associated abradable seals.
+
+If in icing conditions, high engine vibration may be due to fan blade or spinner
+icing. The \ac{QRH} provides a drill to shed this ice, after which normal
+operations can be resumed.
+
+If icing is not suspected and if flight conditions permit, reduce thrust so that
+vibrations are below the advisory level. Shut down the engine after landing for
+taxiing if vibrations above the advisory level have been experienced.
+
+\multicite{QRH~AEP.ENG, FCOM~PRO.AEP.ENG}
+
+\section{Low oil pressure}
+
+The sources for the gauge on the \ac{ECAM} \ac{ENG} page and the \ac{ECAM}
+warning are different. If there is a discrepancy between the two, a faulty
+transducer is the most likely cause and the engine can continue to be operated
+normally. If both sources agree, the engine should be shut down by retarding its
+thrust lever and selecting its master switch off and the after shutdown
+procedure applied (see Section \ref{sec-single-eng-ops}).
+
+\multicite{\uline{ENG~1(2)}~OIL~LO~PR, FCOM~PRO.AEP.ENG}
+
 
 \end{document}
