@@ -39,10 +39,7 @@
 \chapter{links to be moved}
 %%%%%%%%%%%%%%%%
 %labels to be moved once section is processed
-\label{sec-loss-of-braking}
 \label{sec-all-engine-failure}
-\label{sec-gravity-fuel-feeding}
-\label{sec-nose-wheel-steering}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -1158,7 +1155,7 @@ equipment. Notable losses are:
 
 \begin{itemize}
 \item All the fuel pumps, requiring Gravity Fuel Feeding procedures (see Section
-  \ref{sec-gravity-fuel-feeding}) and making center tank fuel unusable.
+  \ref{sec-gravity-fuel}) and making center tank fuel unusable.
 
 \item The anti-skid, three fifths of the spoilers and the reversers. Combined
   with the higher landing speeds required to prevent \ac{RAT} stall this results
@@ -2407,6 +2404,7 @@ will be required (see Section \ref{sec-idg}).
 \chapter{Landing gear}
 
 \section{Loss of braking \emph{(memory item)}}
+\label{sec-loss-of-braking}
 
 If it is simply an autobrake failure, just brake manually. Otherwise, apply max
 reverse and attempt to use the alternate brake system. To do this, release the
@@ -2455,6 +2453,7 @@ may also be spurious \ecam{L/G}{LGCIU 2 FAULT} or \ecam{BRAKES}{SYS 1(2) FAULT}
 
 
 \section{Asymmetric braking}
+\label{sec-asymmetric-braking}
 
 Defined as all brakes on one gear released (indicated by amber brake release
 indicators on both wheels of one main gear on the \cphrase{WHEEL SD} page).
@@ -2628,6 +2627,7 @@ indications on the brake triple gauge.
 
 
 \section{Nosewheel steering fault}
+\label{sec-nose-wheel-steering}
 
 Nosewheel steering is unavailable so differential braking must be used to steer
 the aircraft. The nosewheel may not be aligned if the \ecam{L/G}{shock absorber
@@ -2638,6 +2638,7 @@ as long as possible. Cat 3 dual will not be available.
 
 
 \section{Antiskid nosewheel steering off}
+\label{sec-askid-off}
 
 The \cphrase{A/SKID \& NW STRG} switch is off. The \ac{ABCU} controls braking
 through the alternate braking system. Antiskid is not available so landing
@@ -2645,5 +2646,149 @@ distance will increase significantly. Autobrake and nosewheel steering will also
 not be available.
 
 \multicite{\uline{BRAKES}~ANTI~SKID/NWS~OFF, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Antiskid nosewheel steering fault}
+
+Either:
+
+\begin{itemize}
+\item both BSCU channels have failed or
+\item the normal brake system has been lost and the yellow hydraulic pressure is
+low.
+\end{itemize}
+
+Effects are as for Section \ref{sec-askid-off}, although if yellow hydraulic
+pressure is low braking will be accumulator only.
+
+\multicite{\uline{BRAKES}~A/SKID~NWS~FAULT, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Brake system fault}
+
+A fault has been detected in one channel of the \ac{BSCU}. Loss of redundancy
+only.
+
+\multicite{\uline{BRAKES}~SYS~1(2)~FAULT, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Brakes hot}
+
+At least one brake temperature is >300\textdegree C. Check Section
+\ref{sec-brake-temp-limits} if the temperature is excessive or the brake
+temperatures are not reasonably even.
+
+Temperature must be <300\textdegree C for takeoff to prevent ignition of any
+hydraulic fluid that leaks onto the brake. Use brake fans as necessary to bring
+the temperature down in time for the next takeoff. The brake fans also cool the
+temperature sensor, so assume the real brake temperature is twice that indicated
+if they have recently been used.
+
+% TODO: Check whether we use chocks and release the parking brake.
+
+If the warning appears in flight, providing that performance permits, the
+landing gear should be extended to allow the brakes to cool.
+
+\multicite{\uline{BRAKES}~HOT, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Auto brake fault}
+
+A failure was detected when the autobrake was armed. Brake manually.
+
+\multicite{\uline{BRAKES}~AUTO~BRK~FAULT, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Hydraulic selector valve fault}
+
+This \ac{ECAM} message may indicate two completely different conditions:
+
+\begin{itemize}
+\item The normal brake selector valve has failed in the open position. The
+  normal servo valves (downstream of the selector valve) will have continuous
+  full pressure at their inlets, but, as long as anti-skid is operative, will
+  control brake pressure and anti-skid normally.
+\item The steering selector valve has failed in the open position. This means
+  that the steering will remain pressurised as long as there is pressure in the
+  yellow hydraulic system. This has obvious implications if towing is attempted,
+  but will also mean that the nosewheel will go to maximum deflection if the
+  \cphrase{A/SKID \& N/W STRG} switch is selected off or the \ac{BSCU} is reset.
+
+\end{itemize}
+
+\multicite{\uline{WHEEL}~HYD~SEL~FAULT, FCOM~PRO.ABN.32}
+
+
+\section{Brake system failures}
+
+Loss of the alternate braking system results in loss of redundancy only.
+
+If the normal brake system is lost, alternate braking and anti-skid are
+available. Landing distance increases slightly.
+
+Loss of both normal and alternate brake systems leaves the parking brake as the
+only remaining braking option. See Section \ref{sec-loss-of-braking} for method.
+
+\multicite{\uline{BRAKES}~NORM~BRK~FAULT, \uline{BRAKES}~ALTN~BRK~FAULT,\\
+  FCOM~PRO.AEP.BRAKES}
+
+
+\section{Brake accumulator low pressure}
+
+Braking is not available unless either the green or yellow hydraulic systems are
+pressurised.
+
+If the engines are shut down, attempt to recharge the accumulator
+using the yellow system electrical pump.
+
+When parking the aircraft, use chocks.
+
+\multicite{\uline{BRAKES}~BRK~Y~ACCU~LO~PR, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Released brakes, normal system}
+\label{sec-released-normal-brakes}
+
+If normal braking is active and at least one engine is running, the \ac{BSCU}
+self tests when it receives a ``gear downlocked'' signal from either of the
+\ac{LGCIU}s. The \ecam{BRAKES}{RELEASED} \ac{ECAM} is provided if at least one
+set of brakes on a main wheel is incorrectly released during this test. The
+failed brake is shown by an amber release symbol on the \ac{WHEEL} page. Loss of
+a brake leads to increased landing distances. If both brakes on the same gear
+are released, see Section \ref{sec-asymmetric-braking}.
+
+\multicite{\uline{BRAKES}~RELEASED, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Released brakes, alternate system}
+
+The \ac{ABCU} self tests the brakes in a similar manner to the \ac{BSCU} (see
+Section \ref{sec-released-normal-brakes}). If this test is failed, normal
+braking can be expected as long as the normal braking system is active. If the
+alternate braking system is active, braking will be asymmetric (see Section
+\ref{sec-asymmetric-braking}) because released brakes occur in pairs with the
+alternate braking system.
+
+\multicite{\uline{BRAKES}~ALTN~L(R)~RELEASED,
+FCOM~PRO.AEP.BRAKES}
+
+
+\section{Brake temperature limitations}
+\label{sec-brake-temp-limits}
+
+Maintenance is required if:
+
+\begin{itemize}
+\item One brake temp is >600°C and the other brake on the same gear is 150°C
+  less.
+\item One brake temp is <60°C and the other brake on the same gear is 150°C
+  more.
+\item The average temp of one gear is 200°C more than the average temp of the
+  other.
+\item Any brake temp exceeds 900°C.
+\item A fuse plug has melted.
+\end{itemize}
+
+\multicite{EOMB~2.3.21}
 
 \end{document}
