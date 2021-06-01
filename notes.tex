@@ -3139,4 +3139,232 @@ procedure applied (see Section \ref{sec-single-eng-ops}).
 \multicite{\uline{ENG~1(2)}~OIL~LO~PR, FCOM~PRO.AEP.ENG}
 
 
+\section{High oil temperature}
+
+It may be possible to reduce oil temperature by increasing engine fuel flow.
+
+If oil temperature exceeds 155\textdegree C or exceeds 140\textdegree C for 15
+minutes, the engine must be shut down.
+
+\multicite{\uline{ENG~1(2)}~OIL~HI~TEMP, FCOM~PRO.AEP.ENG}
+
+
+\section{Oil filter clog}
+
+If a warning occurs during a cold engine start with oil temperature
+<40\textdegree C, the warning may be considered spurious. The oil filter
+features a bypass mechanism, so there is no immediate problem.
+
+\multicite{\uline{ENG~1(2)}~OIL~FILTER~CLOG, FCOM~PRO.AEP.ENG}
+
+
+\section{Fuel filter clog}
+
+No immediate crew action required. I assume there is some sort of bypass mechanism, but
+this isn't apparent from the \ac{FCOM}.
+
+\multicite{\uline{ENG~1(2)}~FUEL~FILTER~CLOG, FCOM~PRO.AEP.ENG}
+
+
+\section{Uncommanded reverser pressurisation}
+
+There are two valves that prevent pressure reaching the thrust reverser
+actuators at an inopportune moment, plus a third that commands direction of
+movement. The most upstream of these, controlled by the \ac{SEC}s, prevents any
+hydraulic pressure reaching the Hydraulic Control Unit (\ac{HCU}) when the
+thrust levers are not in the reverse quadrant. If this protection is lost, the
+correct operation of the \ac{HCU} should keep the doors properly stowed. An
+\ac{HCU} malfunction, however, could result in an in-flight reverser
+deployment. If flight conditions permit, idle thrust should be selected on the
+affected engine.
+
+It is unclear from the \ac{FCOM} whether the \ac{ECAM} indicates pressure has
+reached the directional solenoid valve and hence that the reverser door jacks
+are pressurised, albeit in the closed direction, although the existence of the
+\ecam{ENG}{REV ISOL FAULT ECAM} indicates that this is probably the case.
+
+\multicite{\uline{ENG~1(2)}~REV~PRESSURIZED, FCOM~PRO.AEP.ENG}
+
+
+\section{Reverser unlocked in flight}
+
+If one or more reverser doors are detected as not stowed in flight, the
+associated \ac{FADEC} will automatically command idle on the affected
+engine. This should be backed up by setting the thrust lever to idle.
+
+A warning without associated buffet is likely to be spurious. In this case limit
+speed to 300kt/M.78, keep the engine running at idle and expect to make a normal
+single engine approach and landing.
+
+If there is buffet, shut the engine down and limit speed to 240kt. Full rudder
+trim may be required. The \ac{ECAM} will provide one of two approach procedures
+depending on how many doors are detected as not stowed:
+
+\begin{itemize}
+\item If all 4 doors are not stowed on \ac{CEO} or the reverser is deployed on
+  \ac{NEO}, it will be a \ac{conf} 1 landing, with approach speed \V{REF}~+~55kt
+  slowing to \V{REF}~+~40kt below 800ft. Gear should only be deployed once
+  landing is assured.
+\item Otherwise, it will be a flap 3 landing at \V{REF}~+~10kt for \ac{CEO} or
+  \V{REF}~+~15kt for \ac{NEO}.
+\end{itemize}
+
+\multicite{\uline{ENG~1(2)}~REVERSE~UNLOCKED, FCOM~PRO.AEP.ENG}
+
+
+\section{EIU fault}
+
+The Engine Interface Unit (\ac{EIU}) receives data from the engine start system,
+the auto-thrust system, the \ac{LGCIU}s, the air conditioning controller and the
+engine anti ice system and feeds it to its related \ac{FADEC}. Thus loss of the
+\ac{EIU} leads to loss of auto-thrust, reverser, idle control (defaults to
+approach idle) and start for the affected engine. If engine anti ice is used,
+the ignitors must be manually selected.
+
+If an engine fails whilst its associated \ac{EIU} is inoperative, the usual
+\ac{ECAM} messages will not be generated. The failure can still be diagnosed
+from the system pages and an appropriate drill can be actioned from the
+\ac{FCOM}.
+
+\multicite{\uline{ENG~1(2)}~EIU~FAULT, FCOM~PRO.AEP.ENG}
+
+
+\section{N1/N2/EGT overlimit}
+
+If the overlimit is moderate, the associated thrust lever can be retarded until
+the overlimit ceases, and the flight may be continued normally.
+
+If the overlimit is excessive, the engine should generally be shut down. If
+there are over-riding factors precluding a shut down, the engine may be run at
+minimum required thrust.
+
+\multicite{\uline{ENG~1(2)}~N1/N2/EGT~OVERLIMIT, FCOM~PRO.AEP.ENG}
+
+
+\section{N1/N2/EGT/FF discrepancy}
+
+The system can detect a discrepancy between actual and displayed values of
+\ac{N}1, \ac{N}2, \ac{EGT} and fuel flow. This is indicated by an amber
+\ac{CHECK} beneath the affected parameter. Attempt to recover normal indications
+by switching from \ac{DMC}1 to \ac{DMC}3. If this fails, values can be inferred
+from the opposite engine.
+
+\multicite{\uline{ENG~1(2)} N1(N2)(EGT)(FF)~DISCREPANCY, FCOM~PRO.AEP.ENG}
+
+
+\section{Start valve fault}
+
+If a start valve fails open, remove bleed sources supplying the faulty valve. If
+on the ground, turn off the \cphrase{MAN START} button if used, and shut the
+engine down with its master switch.
+
+If the start valve fails closed, it may be that insufficient pressure is
+reaching it. Try opening the cross bleed and turning on the \ac{APU} bleed.
+
+On the ground, a start may still be possible with manual operation of the start
+valve.
+
+\multicite{\uline{ENG~1(2)}~START~VALVE~FAULT, FCOM~PRO.AEP.ENG}
+
+
+\section{Start faults}
+
+Start faults include ignition faults (no light off within 18 seconds of ignition
+start), engine stalls, EGT overlimit (>725\textdegree C) and starter time
+exceedance (2 mins max).
+
+On the ground, nearly all starts are auto starts. In this case the \ac{FADEC}
+will automatically abort as needed. It will then automatically carry out the
+required dry crank phase and make further attempts. Once the \ac{FADEC} gives
+up, an \ac{ECAM} message will instruct the crew to turn off the relevant engine
+master. If the fault was a stall due to low pressure, consider another automatic
+start using cross bleed air.
+
+If a manual start is attempted, the crew must monitor the relevant parameters
+(the \ac{FADEC}s will provide some passive monitoring) and, if necessary, abort
+the start by turning the engine master and man start button off. The crew must
+then carry out a 30 second dry crank phase manually. Note that this is not
+mentioned in the relevant supplementary procedure, nor are the relevant lines
+displayed on the \ac{ECAM}. It is probably worth having \ac{FCOM}
+\inlcite{PRO.AEP.ENG} handy when carrying out manual starts.
+
+Following an aborted start in flight, the engine master should be turned off for
+30 seconds to drain the engine. A further start attempt can then be made.
+
+If the electrical power supply is interrupted during a start (indicated by loss
+of \ac{ECAM} \ac{DU}s) turn the master switch off, then perform a 30 second dry
+crank.
+
+If a fuel leak from the engine drain mast is reported, run the engine at idle
+for 5 minutes. If the leak disappears within this time the aircraft may dispatch
+without maintenance action.
+
+\multicite{\uline{ENG~1(2)}~START~FAULT, FCOM~PRO.AEP.ENG, EOMB~2.3.8.1}
+
+
+\section{Ignition faults}
+
+Each engine has two ignitors. If both fail on a single engine, avoid heavy rain,
+turbulence and, as far as possible, icing conditions.
+
+\multicite{\uline{ENG~1(2)}~IGN~FAULT, FCOM~PRO.AEP.ENG}
+
+
+\section{Thrust lever angle sensor faults}
+
+Each thrust lever has two thrust lever angle (\ac{TLA}) sensors.
+
+Failure of one sensor only leads to a loss of redundancy; the proviso is that it
+must have failed in a way that the system can positively detect.
+
+More difficult is when the sensors are in disagreement. In this case, the
+\ac{FADEC} makes the assumption that one of the sensors is accurate and provides
+a default thrust setting based on this assumption:
+
+\begin{itemize}
+\item On the ground, if neither sensor is in a take-off position, idle power is
+  commanded. If one sensor is in take-off position and the other is above idle,
+  take-off thrust is commanded. This leaves the completely conflicted case of
+  one sensor at take-off and the other at idle or below; the \ac{FADEC} selects
+  idle power as the best compromise.
+\item In flight, once above thrust reduction altitude the \ac{FADEC} will assume
+  that the largest \ac{TLA}, limited to \ac{CLB}, is correct. The autothrust can
+  then manage the thrust between idle and this position. For approach (slats
+  extended), as long as both \ac{TLA}s indicate less than \ac{MCT}, thrust is
+  commanded to idle.
+\end{itemize}
+
+If both \ac{TLA} sensors fail, the \ac{FADEC} again goes for sensible
+defaults. On the ground, idle thrust is set. In flight, if the thrust was
+\ac{TO} or \ac{FLEX} at the time of failure, this setting will be maintained
+until slat retraction, whereupon \ac{CLB} will be selected. If the thrust was
+between \ac{IDLE} and \ac{MCT}, \ac{CLB} will be selected immediately. As soon
+as slats are deployed, \ac{IDLE} is commanded; this remains the case even for
+go-around. Autothrust will manage thrust between \ac{IDLE} and \ac{CLB} whenever
+\ac{CLB} is assumed.
+
+\multicite{\uline{ENG~1(2)}~THR~LEVER~DISAGREE,
+  \uline{ENG~1(2)}~THR~LEVER~FAULT, \\ \uline{ENG~1(2)}~ONE~TLA~FAULT,
+  FCOM~PRO.AEP.ENG}
+
+
+\section{FADEC faults}
+
+The \ac{FADEC}s have two redundant channels; loss of a single channel does not
+generally require crew action. Single channel \ac{FADEC} faults during start may
+be considered spurious on successful application of the reset procedure detailed
+in \ac{FCOM}~\inlcite{PRO.AEP.ENG}.
+
+If both channels of a \ac{FADEC} are lost, the thrust lever should be set to
+idle. Engine indications will be lost. If all other parameters are normal (check
+all \ac{ECAM} system pages), the engine can be left running. Otherwise, shut it
+down.
+
+If a \ac{FADEC} overheats, reducing engine power may reduce temperature in the
+\ac{ECU} area sufficiently to prevent shutdown. If on the ground the engine must
+be shut down and the \ac{FADEC} depowered.
+
+\multicite{\uline{ENG~1(2)}~FADEC~A(B)~FAULT, \uline{ENG~1(2)}~FADEC~FAULT,\\
+  \uline{ENG~1(2)}~FADEC~HI~TEMP, FCOM~PRO.AEP.ENG}
+
 \end{document}
