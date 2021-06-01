@@ -40,6 +40,7 @@
 %%%%%%%%%%%%%%%%
 %labels to be moved once section is processed
 \label{sec-all-engine-failure}
+\label{sec-dualhyd-gy}
 %%%%%%%%%%%%%%%%
 
 \mainmatter
@@ -2790,5 +2791,126 @@ Maintenance is required if:
 \end{itemize}
 
 \multicite{EOMB~2.3.21}
+
+
+\chapter{Power plant}
+
+\section{All engine failure}
+
+The entire easyJet fleet has, thankfully, now been upgraded such that the
+various \ecam{ENG}{DUAL FAILURE} checklists are no longer applicable. Where
+plenty of time is available, the response to failure of both engines is now
+supported by the \ecam{ENG}{ALL ENGINES FAILURE} \ac{ECAM} and the
+\ecam{ENG}{ALL ENG FAIL} \ac{QRH} procedure. For Hudson-like events, the
+\ac{QRH} \ecam{MISC}{EMER LANDING ALL ENG FAILURE} checklist (also available on
+the back of the normal checklist) should be used. Note that the \ac{QRH}
+\ecam{MISC} {Ditching} and \ac{QRH} \ecam{MISC}{Forced Landing} checklists are
+for engines operative landings and are therefore not applicable; engine
+inoperative ditching and forced landing are incluced in the \ecam{ENG}{ALL ENG
+  FAIL} \ac{QRH} procedure.
+
+The \ecam{ENG}{ALL ENGINES FAILURE} \ac{ECAM} actions ensure that emergency
+electrical power is online and that the aircraft is optimally set up for an
+immediate windmill relight (300kt/M0.77 for \ac{CEO}, 270kt/M0.77 for \ac{NEO},
+thrust levers idle). \ac{APU} start is suggested if below \ac{FL}250, although
+this may be spurious if fuel is exhausted or the \ac{APU} is otherwise
+unavailable. For the \ac{CEO}s, a \ac{FAC}1 reset is also actioned in order to
+recover \ac{PFD} characteristic speeds and rudder trim; this does not appear to
+be necessary for the \ac{NEO}s. The \ac{ECAM} then suggests a diversion and
+hands off to the \ac{QRH} procedure. The \ac{QRH} includes the \ac{ECAM}
+actions, so it can be used directly if the \ac{ECAM} is unavailable.
+
+Due to lack of engine bleeds, a slow depressurisation will likely be
+occuring. Since it would be easy to miss excess cabin altitude warnings, donning
+an oxygen mask may be a sensible precaution. \cphrase{RAM AIR} can be used once
+below \ac{FL}100 with differential pressure <1psi.
+
+For the diversion, as a rough rule of thumb, from normal cruise levels any
+airfield within 80nm should be reachable with sufficient height remaining to
+position for a glide approach. You really want at least a 3000m runway, although
+if you can get the \ac{APU} supporting normal electrics and the yellow
+electrical hydraulic pump it may be possible to make do with less. Take account
+of descent winds, airport elevation and available runway directions when
+selecting an airport.
+
+There are two main bifurcations in the procedures, dependent on whether there is
+any chance of restarting an engine in the first case, and whether an emergency
+landing will be made on water or land in the second.
+
+Where relight is feasible, parallel windmill start attempts may be attempted
+once below \ac{FL}270\footnote{Note that this is different from the old
+\ecam{ENG}{DUAL FAILURE} checklist, where windmill start attempts were tried
+immediately, even if outside the relight envelope.} (or below \ac{FL}250 on some
+airframes), and sequential starter assisted start attempts may be made once
+below \ac{FL}200, provided that the \ac{APU} bleed is available. The windmill
+start attempts consist of selecting \ac{IGN} on the \cphrase{ENG MODE sel},
+turning both engine masters off for 30 seconds to ventilate the combustion
+chambers, then turning them both back on, repeating the cycle if
+unsuccessful. Starter assisted start is much like the normal engine start
+procedure: turn both masters off for 30 seconds, ensure \cphrase{ENG MODE sel}
+\ac{IGN}, pneumatic pressure is available to the starter and wing anti-ice is
+off, then turn one of the masters on. If the engine fails to start, turn that
+master off, and try the other one, ensuring 30 seconds of combustion chamber
+ventilation between each attempt. When making starter assisted start attempts,
+speed should be reduced to green dot to achieve maximum glide range; if windmill
+starts are required below \ac{FL}200 (e.g. due lack of \ac{APU}), suitable
+speeds can be found in the \ecam{ENG}{RELIGHT} \ac{QRH} checklist.
+
+Where relight is not a possibility, speed should be reduced to green dot to
+maximise glide range and available time. At windmill relight speeds, available
+range is 2nm per 1000ft, wheras at green dot it is 2\textonehalf nm per
+1000ft. If available, the \ac{APU} should still be started at \ac{FL}250 in
+order to provide normal electrics and pressurisation.
+
+The Green and Yellow hydraulic failure aspect of the dual engine failure is
+interesting in that the checklists make no attempt to bring the Yellow Electric
+pump online once electrical power is available from the \ac{APU}. The rationale
+for this has three parts: firstly, there are branches of the failure where the
+yellow electric pump will not be available, such as if the \ac{APU} was inop,
+and accounting for these cases in the checklists would over-complicate them;
+secondly, the engine driven pumps continue to provide hydraulic pressure for
+some time due to windmilling; and lastly, the \ac{ECAM} will eventually
+recognise the dual hydraulic failure and request the pump be turned on, and the
+checklist does encourage you to clear the \ac{ECAM} alerts and \ac{STATUS} if
+sufficient time is available. The problem with this is that you will likely have
+given up on the \ac{ECAM} by the time it makes this suggestion. In general,
+then, if you recognise that the yellow electric pump is available, turn the
+\ac{PTU} off (see Section \ref{sec-dualhyd-gy}) and turn the yellow pump on. You
+will, of course, still need to gravity extend the gear, as the green system will
+not be recovered, but with blue from the \ac{RAT} and yellow from the electric
+pump, your stopping ability is greatly enhanced.
+
+The recommended configurations are \ac{CONF} 2, gear up for ditching and
+\ac{CONF} 2, gear down for forced landing. \V{APP} is available in each of the
+checklists; it will always be at least 150kt to give a 10kt margin against
+\ac{RAT} stall. The gear is available with gravity extension. If the yellow
+hydraulics have not been reinstated with the electric pump the stabilizer will
+be frozen once engine driven hydraulics are lost and elevator trimming will
+cease with transition to direct law at gear extension. Therefore, it may be
+advantageous to delay gear extension until \ac{CONF} 2 and \V{APP} are reached
+in this case. A pitch attitude of 11\textdegree\ with minimal vertical speed is
+suggested for ditching.
+
+If an airfield can be reached, arrange to be inbound on the runway centerline at
+4nm and 2400ft \ac{aal} (giving a 6\textdegree\ glide to the threshold) with
+\ac{CONF} 1, S speed and gear up. To help achieve this, for a clean aircraft,
+the following rules of thumb apply:
+
+\begin{itemize}
+\item A standard one minute leg holding pattern loses 8000ft and an orbit loses
+  4000ft. Thus for every 15 seconds outbound in a holding pattern, approximately
+  1000ft is lost.
+\item Wings level, 400ft is lost per nm.
+\end{itemize}
+
+For the segment inbound from 4nm, macro adjustment of glide path is available
+through the timing of gear and slat deployment (\ac{CONF} 1, S speed, gear up
+gives about a 4\textonehalf\textdegree\ glide; \ac{CONF} 3, 150kt, gear down
+gives about a 7\textonehalf\textdegree\ glide), then micro adjustment is
+available from temporarily increasing speed above \V{APP}. If necessary,
+disregard slat limiting speeds. It is better to land fast then long.
+
+\multicite{\uline{ENG}~DUAL~FAILURE, QRH~AEP.ENG, FCOM~PRO.AEP.ENG,
+  FCTM~PRO.AEP.ENG}
 
 \end{document}
