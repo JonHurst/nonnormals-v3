@@ -3615,4 +3615,78 @@ vertical modes should be used.
 
 \multicite{\uline{NAV} FM/GPS POS DISAGREE, QRH~AEP.NAV, FCOM~PRO.AEP.NAV}
 
+\chapter{Auto-flight}
+
+\section{FAC faults}
+
+Failure of a single \ac{FAC} results in loss of redundancy and hence loss of Cat
+3 Dual. In particular, a single \ac{FAC} provides all the characteristic speeds
+(\V{SW}, \V{LS}, \V{FE}, \V{FE~next}, \V{LE}, \V{MO}/M\textsubscript{MO}, Green
+dot, S speed and F speed). It may be worth cross-checking against
+\ac{QRH}~\inlcite{OPS.OD Operating Speeds}.
+
+If both \ac{FAC}s are lost the rudder travel limit system, rudder trim control,
+yaw damper and \ac{PFD} characteristic speeds are lost and Alternate Law with
+mechanical yaw control becomes active. Recovery of full rudder authority at flap
+extension should be anticipated, but use rudder with care above 160kt.
+
+\multicite{\uline{AUTO FLT}~FAC~1(2)(1+2)~FAULT, FCOM~PRO.AEP.AUTO~FLT}
+
+
+\section{Yaw damper faults}
+
+A single failure leads to loss of redundancy, and hence loss of Cat 3 Dual. On
+some airframes a reset of the affected \ac{FAC} can be attempted.
+
+With a dual failure a reset of the \ac{FAC}s should be attempted. If the yaw
+damper is not recovered, the flight controls revert to alternate law (see
+Section \ref{sec-alternate-law}). Unless the failure occurred below alert
+height, only Cat 1 will be available.
+
+\multicite{\uline{AUTO FLT}~YAW~DAMPER~1(2)(SYS), FCOM~PRO.AEP.AUTO~FLT}
+
+
+\section{Rudder trim faults}
+
+Loss of a rudder trim from a single \ac{FAC} leads to loss of redundancy and
+hence loss of Cat 3 Dual.
+
+If complete loss of rudder trim occurs, an attempt should be made to reset the
+\ac{FAC}s. If this is not successful, only Cat 1 is available.
+
+\multicite{\uline{AUTO~FLT}~RUDDER~TRIM~SYS(1)(2)~FAULT), FCOM~PRO.AEP.AUTO~FLT}
+
+
+\section{Rudder travel limiter faults}
+
+Loss of rudder limit functionality from a single FAC leads to loss of redundancy
+only.
+
+The effect of complete loss of rudder limiter functionality depends on when the
+failure occurred. In general, the rudder should be used with caution when above
+160kt. An attempt should be made to recover the limiter by resetting the
+\ac{FAC}s. If unsuccessful, full rudder travel authority may or may not be
+recovered at slat extension. If a landing must be made with the rudder travel
+limiter frozen in the high speed regime, max crosswind is reduced to 15kt and
+differential braking may be required on the landing roll (do not arm autobrake).
+
+\multicite{\uline{AUTO~FLT}~RUD~TRV~LIM(1)(2)(SYS), FCOM~PRO.AEP.AUTO~FLT}
+
+
+\section{FCU faults}
+
+Loss of a single channel will result in the spare channel automatically taking
+over. All that is required is a cross check of the baro refs.
+
+Loss of both channels leads to loss of all \ac{FCU} and \ac{EFIS} panels. The
+autopilots, flight directors\footnote{Flight Directors will pop up to provide
+guidance in the event of a go-around.} and autothrust are lost and parameters
+that are normally controlled by the panels revert to sensible default values. If
+the weather radar image remains displayed, disregard it since the scale will be
+incorrect. Since it will only be possible to set the \ac{QNH} on the standby
+altimeters, the \ac{MDA} should not be set in the \ac{MCDU}; instead the \ac{PM}
+should make standard callouts from the standby altimeter.
+
+\multicite{\uline{AUTO FLT}~FCU~1(2)(1+2)~FAULT, FCOM~PRO.AEP.AUTO~FLT}
+
 \end{document}
