@@ -2404,4 +2404,246 @@ will be required (see Section \ref{sec-idg}).
 
 \multicite{\uline{FUEL}~L(R)~OUTER(INNER)(WING)~TK~HI~TEMP, FCOM~PRO.AEP.FUEL}
 
+\chapter{Landing gear}
+
+\section{Loss of braking \emph{(memory item)}}
+
+If it is simply an autobrake failure, just brake manually. Otherwise, apply max
+reverse and attempt to use the alternate brake system. To do this, release the
+brake pedals and turn off the \cphrase{ASKID \& NW STRG} switch. If the
+alternate system also appears to have failed, short successive applications of
+the parking brake may be used. Use of the parking brake in this way risks tire
+burst and lateral control difficulties (due brake onset asymmetry) so delay
+until low speed if at all possible.
+
+\multicite{FCOM~PRO.AEP.BRAKES}
+
+
+\section{Residual braking procedure}
+
+Residual brake pressure must be checked after landing gear extension as there is
+no \ac{ECAM} warning. A brief brake pressure indication is expected as the
+alternate system self tests after the gear is down locked, but pressure should
+quickly return to zero. If the triple indicator shows residual pressure after
+this test, try to zero it by pressing the brake pedals several times. If a
+landing must be made with residual pressure in the alternate braking system, use
+autobrake \ac{MED} or immediate manual braking to prioritise the normal
+system. Anticipate brake asymmetry at touchdown.
+
+\multicite{QRH~AEP.BRAKES, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Gravity extension}
+\label{sec-gravity-gear}
+
+Gravity extension is achieved by turning the \cphrase{GRAVITY GEAR EXTN}
+handcrank clockwise three times until a mechanical stop is reached. Once the
+gear is down, the \ac{LG} lever should be set to down to extinguish the
+\ac{UNLK} lights and remove the \cphrase{LG CTL} message from the \ac{WHEEL}
+page.
+
+Availability of landing gear indications depends on the nature of the failure
+that resulted in the requirement for gravity extension. \cphrase{LDG GEAR}
+control panel indications may still be available if \ac{LGCIU}1 is otherwise
+unserviceable, providing that it is electrically supplied.
+
+Gear doors may show amber on the \ac{WHEEL} page after gravity extension. There
+may also be spurious \ecam{L/G}{LGCIU 2 FAULT} or \ecam{BRAKES}{SYS 1(2) FAULT}
+\ac{ECAM} warnings.
+
+\multicite{QRH~AEP.L/G, FCOM~PRO.AEP.L/G}
+
+
+\section{Asymmetric braking}
+
+Defined as all brakes on one gear released (indicated by amber brake release
+indicators on both wheels of one main gear on the \cphrase{WHEEL SD} page).
+%<!-- {TODO: check  this} -->%
+When the remaining brakes are applied, the aircraft will tend to swing
+towards them. This tendency must be countered with rudder, hence the braking
+must be progressive and co-ordinated with available rudder authority.
+Crosswinds from the side of the available brakes will re-inforce the swing, so
+anything greater than 10kt from that side should be avoided.
+
+If a reverser is inoperative on the same side as the inoperative brakes, do not
+use the remaining reverser since it would also re-inforce the swing.
+
+Landing distances will increase significantly.
+
+\multicite{QRH~AEP.BRAKES, FCOM~PRO.AEP.BRAKES}
+
+
+\section{Landing with abnormal landing gear}
+
+A landing should be carried out on a hard surface runway using any available
+landing gear. Foaming of the runway is recommended. Manual braking should be
+used. Reverse thrust should not be used as it will cause ground spoiler
+extension. The \cphrase{GRVTY GEAR EXTN} handcrank should be turned back to
+normal to allow the landing gear down actuators to be pressurised and thus
+reduce the chance of gear collapse.
+
+If the nose gear is not available, move the \ac{CG} aft by moving passengers to
+the rear of the aircraft. Use elevator to keep the nose off the runway, but
+lower the nose onto the runway before elevator control is lost. Braking must be
+progressive and balanced against available elevator authority. The engines
+should be shut down with the \cphrase{ENG MASTER} switches prior to nose impact.
+
+If one main gear is not available, consider crossfeeding to remove the fuel from
+the wing with the unserviceable gear. The anti-skid system cannot operate with a
+single main gear extended and must be switched off to avoid permanent brake
+release. The ground spoilers should not be armed in order to maintain the
+maximum possible roll authority. The engines should be shut down at
+touchdown. After touchdown, use roll control to keep the unsupported wing from
+touching down for as long as possible.
+
+If both main gear are unavailable, the engines should be shut down in the
+flare. Pitch attitude at touchdown must be >6\textdegree .
+
+All doors and slides are available for evacuation in any of the normal gear up
+attitudes.
+
+\multicite{QRH~AEP.L/G, FCOM~PRO.AEP.L/G}
+
+
+\section{Flight with landing gear extended}
+\label{sec-flight-with-gear-extended}
+
+Flight into expected icing conditions is not approved. Gear down ditching has
+not been demonstrated. \ac{FMGC} predictions will be erroneous -- selected speed
+should be used for all phases except approach. \ac{CLB} and \ac{DES} modes
+should not be used. Altitude alerting will not be available. Any failure that
+normally causes a degradation to alternate law will instead cause a degradation
+to direct law.
+
+The dual engine failure scenario is modified to reflect the gear limiting
+speed. Assisted start should be preferred. If the \ac{APU} is not available,
+gear limit speeds should be disregarded to achieve a windmill start. Flight
+controls will be in direct law; manual pitch trim should be available, even when
+not annunciated on the \ac{PFD}.
+
+Performance in all phases will be affected. In particular, approach climb
+limiting weights for go-around\footnote{See \inlcite{FCOM PRO.NOR.SUP.L/G}}
+must be reduced by 14\%. Fuel burn will increase (approximate factor is
+2.3). Engine out ceiling and take-off performance are also impacted.
+
+\multicite{FCOM~PRO.NOR.SUP.L/G}
+
+
+\section{Gear shock absorber fault}
+
+A shock absorber did not extend when airborne or did not compress on landing. If
+airborne the gear cannot be retracted. Respect the gear extended limit speed of
+280kt and see Section \ref{sec-flight-with-gear-extended}.
+
+\multicite{\uline{L/G}~SHOCK~ABSORBER~FAULT, FCOM~PRO.AEP.L/G}
+
+
+\section{Gear not uplocked}
+
+Landing gear retraction sequence has not completed within 30 seconds. If the gear doors
+have closed, the gear will rest on the doors so avoid excess g loads. If the doors have not
+closed, recycle the gear. If this does not work, select the gear down and see
+Section \ref{sec-flight-with-gear-extended}.
+
+\multicite{\uline{L/G}~GEAR~NOT~UPLOCKED, FCOM~PRO.AEP.L/G}
+
+
+\section{Gear not downlocked}
+
+If the landing gear extension sequence has not completed within 30 seconds,
+retract the gear, wait until it has fully stowed, and then redeploy it. Recent
+studies show that if the gear does not immediately deploy successfully following
+reselection, it may deploy normally within the next two minutes as hydraulic
+pressure continues to act on the gear and doors throughout this time. If still
+unsuccessful after two minutes, attempt to deploy the gear by gravity (see
+Section \ref{sec-gravity-gear}).
+
+\multicite{\uline{L/G}~GEAR~NOT~DOWNLOCKED, FCOM~PRO.AEP.L/G}
+
+
+\section{Gear doors not closed}
+
+A gear door is not uplocked. Recycle the gear. If the doors cannot be closed,
+speed is limited to 250kt/M0.6.
+
+\multicite{\uline{L/G}~DOORS~NOT~CLOSED, FCOM~PRO.AEP.L/G}
+
+
+\section{Uplock fault}
+
+An uplock is engaged when the corresponding gear is downlocked. As the uplock
+will not move to accept the gear the gear must be left down. See Section
+\ref{sec-flight-with-gear-extended}.
+
+\multicite{\uline{L/G}~GEAR~UPLOCK~FAULT, FCOM~PRO.AEP.L/G}
+
+
+\section{LGCIU disagreement}
+
+The \ac{LGCIU}s disagree on the position of the gear. In the absence of other
+\ac{ECAM} warnings, the gear position can be assumed to agree with the gear
+lever position.
+
+\multicite{\uline{L/G}~SYS~DISAGREE, FCOM~PRO.AEP.L/G}
+
+
+\section{LGCIU fault}
+
+The \ac{FADEC}s use \ac{LGCIU} input to determine idle mode. If a \ac{LGCIU} is
+determined to be faulty, the system failsafes to approach idle mode, and
+modulated idle and reverse idle (and hence reversers) will not be available.
+
+The \ac{GPWS} uses \ac{LGCIU}1 to determine landing gear position. If this
+\ac{LGCIU} is faulty, the \ac{GPWS} will need to be inhibited to prevent
+spurious warnings.
+
+If both \ac{LGCIU}s are lost, normal landing gear control and indicating systems
+are lost. The gear must be gravity extended (see Section
+\ref{sec-gravity-gear}). Additionally, the autopilots and autothrust are lost
+(normal law remains available) and wing anti-ice is limited to 30s of heating
+(i.e. the ground test), the only indication of which is a \cphrase{no Anti-Ice}
+message on the \cphrase{BLEED SD} page.
+
+\multicite{\uline{L/G}~LGCIU~1(2)~FAULT, FCOM~PRO.AEP.L/G}
+
+
+\section{Gear not down}
+
+Indicates that the landing gear is not downlocked when radio altitude is below
+750ft rad alt and \ac{N}1 and flap setting indicate that the aircraft is on
+approach. If rad alt data is not available, it indicates gear is not down when
+\ac{conf} 3 or \ac{conf} Full is selected. In some cases the warning may be
+cancelled with the emergency cancel pushbutton.
+
+\multicite{\uline{L/G}~GEAR~NOT~DOWN, FCOM~PRO.AEP.L/G}
+
+
+\section{Park brake on}
+
+The parking brake is set when the thrust levers are set to \ac{FLX} or
+\ac{TOGA}. Check the position of the brake handle position and for pressure
+indications on the brake triple gauge.
+
+\multicite{\uline{CONFIG}~PARK~BRK~ON, FCOM~PRO.AEP.CONFIG}
+
+
+\section{Nosewheel steering fault}
+
+Nosewheel steering is unavailable so differential braking must be used to steer
+the aircraft. The nosewheel may not be aligned if the \ecam{L/G}{shock absorber
+  fault} \ac{ECAM} is also displayed, in which case delay nosewheel touch down
+as long as possible. Cat 3 dual will not be available.
+
+\multicite{\uline{WHEEL}~N/W~STRG~FAULT, FCOM~PRO.AEP.WHEEL}
+
+
+\section{Antiskid nosewheel steering off}
+
+The \cphrase{A/SKID \& NW STRG} switch is off. The \ac{ABCU} controls braking
+through the alternate braking system. Antiskid is not available so landing
+distance will increase significantly. Autobrake and nosewheel steering will also
+not be available.
+
+\multicite{\uline{BRAKES}~ANTI~SKID/NWS~OFF, FCOM~PRO.AEP.BRAKES}
+
 \end{document}
