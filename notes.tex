@@ -3689,4 +3689,206 @@ should make standard callouts from the standby altimeter.
 
 \multicite{\uline{AUTO FLT}~FCU~1(2)(1+2)~FAULT, FCOM~PRO.AEP.AUTO~FLT}
 
+\chapter{Hydraulics}
+
+\section{Green + yellow systems low pressure}
+
+It may be possible to recover the yellow system using the yellow electrical
+pump. The \ac{PTU} will need to be turned off in this case, as the yellow
+electric pump lacks sufficient capacity to pressurise the green system through
+the \ac{PTU}. Systems lost because of low air pressure in the reservoir will be
+recoverable at lower altitudes. Systems lost due to reservoir overheats may be
+usable for the approach once they have cooled down.
+
+Roll control is available from ailerons and spoiler 3. Pitch control is
+available from the elevators, but the \ac{THS} is frozen. Yaw damping is
+lost. Slats are available, but slow. Flaps are frozen. Control law reverts to
+Alternate Law without stability protections. The autopilots are lost.
+
+The gear must be gravity extended, but due to the frozen \ac{THS} this must be
+delayed until \V{APP} is achieved in \ac{CONF} 3. Furthermore, transition to
+\ac{CONF} 3 must be achieved with the method described in Section
+\ref{sec-stuck-slats/flaps} due to the flaps being frozen. Transition to Direct
+Law on gear deployment adds to the fun, especially as pitch trim is unavailable.
+
+Cat 2 and 3 capability is lost. The landing will be \ac{CONF} 3, most probably
+with only the slats deployed; the flare attitude will be abnormal. There will
+only be one spoiler (\#3), no reversers, accumulator only braking and no nose
+wheel steering. Hence required landing distances almost triple.
+
+The go around, in some ways, is exceptionally straightforward. The gear cannot
+be raised and the configuration should be maintained. Due to the frozen
+stabiliser, a speed close to \V{APP} should be flown.\footnote{Airbus originally
+suggested flying \V{FE} $-$ 10kt; I assume this was found to cause handling
+difficulties due to pitch trim not being available.} As long as the flaps are
+frozen at zero, the slats can be retracted for a subsequent diversion; fuel flow
+will be approximately 3 times normal due to the extended gear. If flaps are not
+at zero, fuel flow will be up to 4 times normal.
+
+A paper summary is available in section \ac{HYD} of the \ac{QRH}, and this
+should be applied once all \ac{ECAM} actions are completed.
+
+\multicite{\uline{HYD}~G~+~Y~SYS~LO~PR, QRH~AEP.HYD, FCOM~PRO.AEP.HYD}
+
+
+\section{Blue + yellow systems low pressure}
+
+It may be possible to recover the yellow system using the yellow electrical pump
+or the blue system using the \ac{RAT}. Systems lost because of low air pressure
+in the reservoir will be recoverable at lower altitudes. Systems lost due to
+reservoir overheats may be usable for the approach once they have cooled down.
+
+Roll control is provided by ailerons and spoiler 5, pitch control by the
+\ac{THS} and left elevator. Slats and flaps are available at reduced rate. The
+autopilots are lost but Normal Law is retained. Speedbrake is unavailable.
+
+Cat 2 and 3 capability is lost. Landing distances are increased due to loss of
+spoilers 2, 3 and 4 and loss of \#2 reverser. Approach configuration is normal
+apart from slow flaps and slats and gravity gear extension (protects green
+system). Nose wheel steering is lost.
+
+Gear cannot be retracted on go-around. Fuel burn for a subsequent diversion will
+be significantly greater (approx factor 3 times normal); see Section
+\ref{sec-flight-with-gear-extended} for further details.
+
+A paper summary is available in the \ac{HYD} section of the \ac{QRH}, and this
+should be applied once all \ac{ECAM} actions are completed.
+
+\multicite{\uline{HYD}~B~+~Y~SYS~LO~PR, QRH~AEP.HYD, FCOM~PRO.AEP.HYD}
+
+
+\section{Green + blue systems low pressure}
+
+If the blue system has been lost due to the loss of its electrical pump, it may
+be recovered by deploying the \ac{RAT}. Systems lost because of low air pressure
+in the reservoir will be recoverable at lower altitudes. Systems lost due to
+reservoir overheats may be usable for the approach once they have cooled down.
+
+Roll control is provided by spoilers 2 and 4 only. Use of speedbrake would
+therefore lead to loss of roll control. Pitch control is available from the
+starboard elevator; the \ac{THS} remains available. Due to the limited control
+surfaces available, the aircraft will be slightly sluggish. The slats are
+frozen, but flaps are available. Control law reverts to Alternate Law without
+stability protections. The autopilots are lost. The approach will be flown with
+the autothrust off.
+
+Due to the frozen slats, configuration changes must be carried out using the
+method described in Section \ref{sec-stuck-slats/flaps}. The gear must be
+gravity extended; to benefit from the improved elevator response available in
+Direct Law, this is done at 200kt. Manual trim will be available.
+
+Cat 2 and 3 capability is lost. The landing will be \ac{CONF} 3. Two spoilers
+per wing are available, reverser 2 is available, alternate braking is available
+and nose wheel steering is available. Landing distances approximately double.
+
+Go around is straightforward -- the gear cannot be retracted and the flap
+configuration should be maintained. Simply select \V{FE}~$-$~10kt. For
+diversion, the flaps can be retracted. With the gear remaining down, fuel burn
+will increase by a factor of approximately 3 if the slats are at zero or up to
+approximately 3\textonehalf\ if they are extended.
+
+A paper summary is available in the ac{HYD} section of the \ac{QRH}, and this
+should be applied once all \ac{ECAM} actions are completed.
+
+\multicite{\uline{HYD}~G~+~B~SYS~LO~PR, QRH~AEP.HYD, FCOM~PRO.AEP.HYD}
+
+
+\section{Green system low pressure}
+
+The major lost systems are normal landing gear operation (gravity extension is
+available but gear retraction is not) and the normal brake system, including the
+autobrake (alternate braking is available). Landing distance will be increased
+due to loss of two spoilers per wing and reverser 1. Flap and slat deployment
+will be slow.
+
+\multicite{\uline{HYD}~G~SYS~LO~PR, FCOM~PRO.AEP.HYD}
+
+
+\section{Yellow system low pressure}
+
+It may be possible to recover the yellow system by using the yellow electric pump.
+
+Two spoilers per wing and reverser 2 are lost, so landing distance will increase
+slightly. Nose wheel steering is lost. Flap deployment will be slow. As the
+alternate braking system is only available through the brake accumulator, ensure
+there is sufficient pressure when the parking brake is set.
+
+\multicite{\uline{HYD}~Y~SYS~LO~PR, FCOM~PRO.AEP.HYD}
+
+
+
+\section{Blue system low pressure}
+
+One spoiler per wing will be lost but this has negligible effect on landing
+distance. Slats will be slow to deploy. Deployment of the \ac{RAT} is not
+recommended unless another system is lost. If the system is lost due to low
+reservoir level, emergency generation capability is lost.
+
+\multicite{\uline{HYD}~B~SYS~LO~PR, FCOM~PRO.AEP.HYD}
+
+
+\section{Engine driven pump low pressure}
+
+Turn off the affected pump. The \ac{PTU} will pressurise the affected system.
+
+\multicite{\uline{HYD}~G(Y)~ENG~1(2)~PUMP~LO~PR, FCOM~PRO.AEP.HYD}
+
+
+\section{Electric pump low pressure or overheat}
+
+Turn off the affected pump. In the case of an overheat, the pump may be
+re-engaged for the approach providing the relevant \ac{FAULT} light on the
+overhead panel has extinguished.
+
+\multicite{\uline{HYD}~Y(B)~ELEC~PUMP~LO~PR(OVHT), FCOM~PRO.AEP.HYD}
+
+
+\section{Low reservoir air pressure}
+
+Loss of air pressure to a hydraulic reservoir may lead to pump cavitation and
+hence fluctuating pressures. If this occurs, turn off the affected pump, and if
+applicable, turn off the \ac{PTU}. Cavitation reduces with altitude, so it may
+be possible to reinstate the system during the descent.
+
+\multicite{\uline{HYD}~G(Y)(B)~RSVR~LO~AIR~PR, FCOM~PRO.AEP.HYD}
+
+
+\section{Reservoir overheat}
+
+Turn off all affected pumps and if applicable, turn off the \ac{PTU}. The system
+should be reinstated for the approach if it has cooled sufficiently. This is
+indicated by the \ac{FAULT} light going out on the overhead panel.
+
+\multicite{\uline{HYD}~G(Y)(B)~RSVR~OVHT, FCOM~PRO.AEP.HYD}
+
+
+\section{Low reservoir fluid level}
+
+Turn off all affected pumps and, if applicable, turn off the \ac{PTU}. The
+affected system is not recoverable. In the case of low reservoir level in the
+yellow system, it is possible that the fluid from the brake accumulator may also
+be lost. This usually occurs within 10 minutes of the initial warning. Without
+the brake accumulator, the parking brake is not available, so chock the aircraft
+before shutting down engine 1.
+
+\multicite{\uline{HYD}~G(Y)(B)~RSVR~LO~LVL, FCOM~PRO.AEP.HYD}
+
+
+\section{PTU fault}
+
+In flight this indicates that either the green or yellow system is low on fluid
+and has low system pressure. The \ac{PTU} must be turned off to prevent
+overheating the supplying system.
+
+\multicite{\uline{HYD}~PTU~FAULT, FCOM~PRO.AEP.HYD}
+
+
+\section{RAT fault}
+
+Indicates that either the \ac{RAT} is not fully stowed, pressure is present in
+the \ac{RAT} stowing actuator or that the \ac{RAT} pump is not available. No
+action is required.
+
+\multicite{\uline{HYD}~RAT~FAULT, FCOM~PRO.AEP.HYD}
+
 \end{document}
