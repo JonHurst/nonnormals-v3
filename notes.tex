@@ -3658,12 +3658,15 @@ Loss of rudder limit functionality from a single FAC leads to loss of redundancy
 only.
 
 The effect of complete loss of rudder limiter functionality depends on when the
-failure occurred. In general, the rudder should be used with caution when above
-160kt. An attempt should be made to recover the limiter by resetting the
-\ac{FAC}s. If unsuccessful, full rudder travel authority may or may not be
-recovered at slat extension. If a landing must be made with the rudder travel
-limiter frozen in the high speed regime, max crosswind is reduced to 15kt and
-differential braking may be required on the landing roll (do not arm autobrake).
+failure occurred.
+
+In general, the rudder should be used with caution when above 160kt.
+
+An attempt should be made to recover the limiter by resetting the \ac{FAC}s.  If
+unsuccessful, full rudder travel authority may or may not be recovered at slat
+extension. If a landing must be made with the rudder travel limiter frozen in
+the high speed regime, max crosswind is reduced to 15kt and differential braking
+may be required on the landing roll (do not arm autobrake).
 
 \multicite{\uline{AUTO~FLT}~RUD~TRV~LIM(1)(2)(SYS), FCOM~PRO.AEP.AUTO~FLT}
 
@@ -3900,6 +3903,30 @@ deselect the remaining good \ac{ADR}. Switching off one of the affected
 \multicite{QRH~AEP.A-ICE, FCOM~PRO.AEP.A-ICE}
 
 
+\section{Multiple pitot heat failures}
+
+The issue with loss of anti-ice on more than one pitot probe is that it is
+possible that the two unprotected pitot probes will ice up at the same time and
+provide erroneous but coherent data. This leads to a situation where the
+\ac{ADR} associated with the remaining protected probe is locked out despite
+being the single correct source.
+
+Obviously, the first thing to do is to avoid icing conditions.
+
+If there is a working \ac{ADR} connected to a protected probe, turn one of the
+\ac{ADR}s associated with an unprotected probe off. This ensures that an
+\cphrase{ADR DISAGREE} \ac{ECAM} caution is triggered by significant speed
+discrepancies and ensures that the protected \ac{ADR} will not be automatically
+deselected.
+
+If pitot heat is lost on all probes, one of the \ac{ADR}s should, again, be
+turned off to ensure the \cphrase{ADR DISAGREE} \ac{ECAM} caution is provided. If
+icing is expected, turn off a second \ac{ADR} and be ready to apply unreliable
+airspeed procedures (see Section \ref{sec-unreliable-airspeed}).
+
+\multicite{\uline{ANTI~ICE}~ALL(CAPT(F/O)+F/O(STBY))~PITOT, FCOM~PRO.AEP.A-ICE}
+
+
 \section{Single pitot probe heat or static port heat fault}
 
 The \ac{ADR} associated with the failed probe or port should be considered
@@ -3909,28 +3936,6 @@ information must be monitored closely.
 
 \multicite{\uline{ANTI~ICE}~CAPT(F/O)(STBY)~PITOT(L(R)~STAT),
   FCOM~PRO.AEP.A-ICE}
-
-
-\section{Multiple pitot heat failures}
-
-The issue with loss of anti-ice on more than one pitot probe is that it is
-possible that the two unprotected pitot probes will ice up at the same time and
-provide erroneous but coherent data. This leads to a situation where the
-\ac{ADR} associated with the remaining protected probe is locked out despite
-being the single correct source.
-
-Obviously, the first thing to do is to avoid icing conditions. If there is a
-working \ac{ADR} connected to a protected probe, turn one of the \ac{ADR}s
-associated with an unprotected probe off. This ensures that an \cphrase{ADR
-  DISAGREE} \ac{ECAM} caution is triggered by significant speed discrepancies
-and ensures that the protected \ac{ADR} will not be automatically deselected.
-
-If pitot heat is lost on all probes, one of the \ac{ADR}s should, again, be
-turned off to ensure the \cphrase{ADR DISAGREE} \ac{ECAM} caution is provided. If
-icing is expected, turn off a second \ac{ADR} and be ready to apply unreliable
-airspeed procedures (see Section \ref{sec-unreliable-airspeed}).
-
-\multicite{\uline{ANTI~ICE}~ALL(CAPT(F/O)+F/O(STBY))~PITOT, FCOM~PRO.AEP.A-ICE}
 
 
 \section{Single AOA or TAT heat fault}
