@@ -3551,6 +3551,7 @@ extension and loss of auto flap retraction.
 
 
 \section{ADR disagree}
+\label{sec-adr-disagree}
 
 The \ac{ECAM} message indicates that, following an \ac{ADR} fault or rejection,
 there is a speed or angle of attack disagreement between the two remaining
@@ -3890,5 +3891,107 @@ the \ac{RAT} stowing actuator or that the \ac{RAT} pump is not available. No
 action is required.
 
 \multicite{\uline{HYD}~RAT~FAULT, FCOM~PRO.AEP.HYD}
+
+
+\chapter{Ice and rain protection}
+
+\section{Double AOA heat fail}
+
+If two \ac{AOA} probes are affected by icing, the computers may erroneously
+deselect the remaining good \ac{ADR}. Switching off one of the affected
+\ac{ADR}s leaves the system in the state described in Section
+\ref{sec-adr-disagree}.
+
+\multicite{QRH~AEP.A-ICE, FCOM~PRO.AEP.A-ICE}
+
+
+\section{Single pitot probe heat or static port heat fault}
+
+The \ac{ADR} associated with the failed probe or port should be considered
+unreliable. \ac{ADR}1 or \ac{ADR}2 can be replaced with \ac{ADR}3 using air data
+switching. If using standby instruments with \ac{ADR}3 unreliable, air data
+information must be monitored closely.
+
+\multicite{\uline{ANTI~ICE}>~CAPT(F/O)(STBY)~PITOT(L(R)~STAT),
+  FCOM~PRO.AEP.A-ICE}
+
+
+\section{Multiple pitot heat failures}
+
+The issue with loss of anti-ice on more than one pitot probe is that it is
+possible that the two unprotected pitot probes will ice up at the same time and
+provide erroneous but coherent data. This leads to a situation where the
+\ac{ADR} associated with the remaining protected probe is locked out despite
+being the single correct source.
+
+Obviously, the first thing to do is to avoid icing conditions. If there is a
+working \ac{ADR} connected to a protected probe, turn one of the \ac{ADR}s
+associated with an unprotected probe off. This ensures that an \cphrase{ADR
+  DISAGREE} \ac{ECAM} caution is triggered by significant speed discrepancies
+and ensures that the protected \ac{ADR} will not be automatically deselected.
+
+If pitot heat is lost on all probes, one of the \ac{ADR}s should, again, be
+turned off to ensure the \cphrase{ADR DISAGREE} \ac{ECAM} caution is provided. If
+icing is expected, turn off a second \ac{ADR} and be ready to apply unreliable
+airspeed procedures (see Section \ref{sec-unreliable-airspeed}).
+
+\multicite{\uline{ANTI~ICE}~ALL(CAPT(F/O)+F/O(STBY))~PITOT, FCOM~PRO.AEP.A-ICE}
+
+
+\section{Single AOA or TAT heat fault}
+
+No immediate operational effect.
+
+\multicite{\uline{ANTI~ICE}~CAPT(F/O)(STBY)~AOA(TAT), FCOM~PRO.AEP.A-ICE}
+
+
+\section{Probe heat computer failure}
+
+If applicable, deselect the affected ADR.
+
+\multicite{\uline{ANTI~ICE}~CAPT(F/O)(STBY)~PROBES, FCOM~PRO.AEP.A-ICE}
+
+
+\section{Window heat fault}
+
+No immediate operational effect.
+
+\multicite{\uline{ANTI~ICE}~L(R)(L+R)~WINDSHIELD(WINDOW), FCOM~PRO.AEP.A-ICE}
+
+
+\section{Engine anti-ice valve fault}
+
+If a valve fails to open when commanded, avoid icing conditions. If it fails to
+close when commanded, a thrust limit penalty applies.
+% TODO: Check this is automatically applied by the relevant FADEC.
+
+\multicite{\uline{ANTI~ICE}~ENG~1(2)~VALVE~OPEN(CLSD), FCOM~PRO.AEP.A-ICE}
+
+
+\section{Wing anti-ice valve faults}
+%\section{Wing anti-ice valve open when commanded closed}
+
+If a wing anti-ice valve is open when commanded closed:
+
+\begin{itemize}
+\item In the air, just allow the failed side to be continually anti-iced and use
+  wing anti-ice on the working side when required. A thrust limit penalty will
+  apply.
+\item On the ground, if this occurs after the ground self-test, simply switch
+  off the wing anti-ice with the \ac{PB}. Otherwise, isolate and depressurise
+  the pneumatic system on the failed side.
+\end{itemize}
+
+%\section{Wing anti-ice valve closed when commanded open}
+
+If a wing anti-ice valve is closed when commanded open, the wing anti-ice must
+be turned off to avoid asymmetrically de-icing the wings. Avoid icing
+conditions. If ice accretion does occur, landing distances and \V{APP}
+adjustments are in \ac{QRH} and speed must be maintained above the higher of
+\V{LS} + 10kt or Green Dot.
+
+\multicite{\uline{WING~ANTI~ICE}~SYS~FAULT, FCOM~PRO.AEP.A-ICE,
+  FCOM~PRO.NOR.SUP.AW}
+
 
 \end{document}
