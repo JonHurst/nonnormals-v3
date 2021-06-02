@@ -3994,4 +3994,79 @@ adjustments are in \ac{QRH} and speed must be maintained above the higher of
   FCOM~PRO.NOR.SUP.AW}
 
 
+\chapter{Indicating/Recording}
+
+\section{Display unit failure}
+
+Intermittent flashing of \ac{DU}s may be indicative of a generator issue. If
+\ac{cm}1 \ac{DU}s are flashing, try turning off generator 1. If \ac{cm}2
+\ac{DU}s are flashing, try turning off generator 2. The \ac{APU} generator can
+be used if successful.
+
+In the case of a blank \ac{DU}, a large amber ``F'', a distorted display or
+minimum brightness, on some airframes a reset may be attempted by selecting the
+\ac{DU} brightness off then back on. If the reset is not applicable or the
+\ac{DU} does not recover after 10 seconds, the affected \ac{DU} can be turned
+off. In the case of an \cphrase{INVALID DISPLAY UNIT} message, an automatic
+recovery attempt is initiated; this can take 40 seconds or more. If automatic
+recovery does not succeed, the \ac{DU} can be turned off.
+
+An \cphrase{INVALID DATA} message is indicative of a \ac{DMC} problem; \ac{EIS}
+\ac{DMC} switching may recover the \ac{DU}, as may turning the \ac{DU} off then
+on. It is possible that this message will appear simultaneously on \emph{all}
+\ac{DU}s; this initiates an automatic recovery attempt, which, again, can take
+40 seconds or more. \ac{DU}s that are not automatically recovered may be
+recovered manually by sequentially turning them off for 40 seconds then back
+on. If resetting a \ac{DU} triggers a recurrence of the original problem, leave
+that \ac{DU} off for the next recovery cycle.
+
+In the event of an unrecoverable failure of a display unit, some automatic
+display switching will occur: \ac{PFD} will auto-transfer to \ac{NDU}s and
+\ac{EWD} will auto-transfer to \ac{SDU}. Each pilot has a \cphrase{PFD/ND XFR}
+button that allows their \ac{PFD} to be toggled onto their \ac{NDU} and their
+\ac{ND} to be toggled onto their \ac{PFDU}. An \cphrase{ECAM/ND XFR} switch on
+the switching panel allows either the \ac{SD} (when \ac{SDU} \strong{xor}
+\ac{EWDU} failed) or \ac{EWD} (\ac{SDU} \strong{and} \ac{EWDU} failed) to be
+displayed on an \ac{NDU}.
+
+The most likely end result of a \ac{DU} failure is that one \ac{ND} must be
+shared and/or that the \ac{SD} is not displayed. The \ac{ECAM} can be operated
+with just the \ac{EWD}. When a \ac{SYS} page is needed, press and hold the
+required \ac{SYS} page button. When \cphrase{STATUS} is required, press and
+maintain the \ac{STS} key. The \ac{EWD} will be displayed 2s after the \ac{STS}
+key is released. To access \cphrase{STATUS} overflow, release then repress the
+\ac{STS} key within 2s.
+
+\multicite{QRH~AEP.EIS, FCOM~PRO.AEP.EIS}
+
+
+\section{Multiple spurious ECAM alerts}
+
+A faulty \ac{DMC} can cause multiple spurious \ac{ECAM} alerts (spurious as
+confirmed by \ac{SD} pages). The \ac{EIS} \ac{DMC} switch should be used to
+identify the faulty \ac{DMC} and replace it with \ac{DMC}3.
+
+\multicite{QRH~AEP.FWS, FCOM~PRO.AEP.FWS}
+
+
+\section{Flight Warning Computer failure}
+
+The two identical \ac{FWC}s generate alert messages, memos, aural alerts, and
+synthetic voice messages. Loss of a single \ac{FWC} leads to downgrade to Cat 3
+Single due to loss of redundancy. The major effects of loss of both \ac{FWC}s
+are loss of \ac{ECAM} (including attention getters, status page and
+takeoff/landing memos), loss of auto callouts\footnote{There is some question as
+to whether windshear and \ac{GPWS} aural alerts are included under `auto
+callouts'. The \ac{FCOM} is unclear on the matter.} (radio height and decision
+height) and loss of altitude alerting. In the sim, there is also loss of rudder
+trim reset, loss of \ac{APU} fuel valve status and loss of cabin crew call alert
+as side-effects.
+
+The procedure is simply to use the \ac{SYS} pages and overhead panel warning
+lights to monitor the systems, and for \ac{PM} to make the relevant
+callouts. Alternative method for cabin crew to get flight deck attention may be
+required.
+
+\multicite{\uline{FWS}~FWC~1(2)(1+2)~FAULT, FCOM~PRO.AEP.FWS}
+
 \end{document}
