@@ -33,6 +33,11 @@
 
 \ifdefined\HCode
 \else
+%% Widens the section number in contents list to account for
+%% long section numbers such as 10.10
+\makeatletter
+\def\l@section{\@dottedtocline{1}{1em}{2.75em}}
+\makeatother
 \tableofcontents
 \fi
 
